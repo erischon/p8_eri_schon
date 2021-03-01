@@ -1,28 +1,40 @@
 from selenium import webdriver
+import unittest
 
-browser = webdriver.Firefox()
+class NewVisitorTest(unittest.TestCase):
 
-# Lily a entendu parlé d'une application web qui permet de trouver des substituts alimentaires. Elle va y jeter un oeil en utilisant son navigateur web.
-browser.get('http://localhost:8000')
+    def setUp(self):
+        self.browser = webdriver.Firefox()
 
-# Elle voit qu'elle est au bon endroit en voyant le titre de la page. 
-assert 'The Substitute' in browser.title
+    def tearDown(self):
+        self.browser.quit()
 
-# On lui demande de donner un produit pour lequel elle souhaite trouver un substitut.
+    def test_can_find_a_substitute_and_add_it_as_favorite(self):
 
-# Elle tape "Nutella" dans le formulaire.
+        # Lily a entendu parlé d'une application web qui permet de trouver des substituts alimentaires. Elle va y jeter un oeil en utilisant son navigateur web.
+        self.browser.get('http://localhost:8000')
 
-# Une fois qu'elle a cliqué sur le bouton recherche une nouvelle page s'affiche. Elle y trouve une liste de substituts.
+        # Elle voit qu'elle est au bon endroit en voyant le titre de la page.
+        self.assertIn('The Substitute', self.browser.title) 
+        self.fail('Finish the test!')
 
-# Elle a la possibilité d'un choisir un. En cliquant sur celui qu'elle a choisit une nouvelle page s'affiche avec toute les informations concernant le produit de substitution.
+        # On lui demande de donner un produit pour lequel elle souhaite trouver un substitut.
 
-# Elle voudrait bien sauvegarder ce produit. Ca tombe bien, un lien lui propose de le faire. En cliquant dessus elle arrive sur une page d'authentification.
+        # Elle tape "Nutella" dans le formulaire.
 
-# Sur cette page on lui propose d'entrer un login et un password, ou de créer un compte utilisateur. Comme elle n'a pas de login, elle clique sur "Créer un compte utilisateur" et elle arrive sur une nouvelle page.
+        # Une fois qu'elle a cliqué sur le bouton recherche une nouvelle page s'affiche. Elle y trouve une liste de substituts.
 
-# On lui demande d'entrer son prénom, un email et un password, puis on lui demande de valider. Une fois qu'elle valide une nouvelle page s'affiche.
+        # Elle a la possibilité d'un choisir un. En cliquant sur celui qu'elle a choisit une nouvelle page s'affiche avec toute les informations concernant le produit de substitution.
 
-# Sur cette page elle trouve l'aliment de substitution qu'elle avait choisi.
+        # Elle voudrait bien sauvegarder ce produit. Ca tombe bien, un lien lui propose de le faire. En cliquant dessus elle arrive sur une page d'authentification.
 
-# Satisfaite elle quitte l'application
-browser.quit()
+        # Sur cette page on lui propose d'entrer un login et un password, ou de créer un compte utilisateur. Comme elle n'a pas de login, elle clique sur "Créer un compte utilisateur" et elle arrive sur une nouvelle page.
+
+        # On lui demande d'entrer son prénom, un email et un password, puis on lui demande de valider. Une fois qu'elle valide une nouvelle page s'affiche.
+
+        # Sur cette page elle trouve l'aliment de substitution qu'elle avait choisi.
+
+        # Satisfaite elle quitte l'application
+
+if __name__ == '__main__':
+    unittest.main(warnings='ignore')
