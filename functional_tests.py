@@ -10,7 +10,7 @@ class NewVisitorTest(unittest.TestCase):
         self.browser.quit()
 
     def test_can_find_a_substitute_and_add_it_as_favorite(self):
-
+        
         # Lily a entendu parlé d'une application web qui permet de trouver des substituts alimentaires. Elle va y jeter un oeil en utilisant son navigateur web.
         self.browser.get('http://localhost:8000')
 
@@ -18,23 +18,37 @@ class NewVisitorTest(unittest.TestCase):
         self.assertIn('The Substitute', self.browser.title) 
         self.fail('Finish the test!')
 
-        # On lui demande de donner un produit pour lequel elle souhaite trouver un substitut.
+        # Elle est satisfaite en lisant le slogan qui lui parle vraiment.
+        # > h2 + text
 
-        # Elle tape "Nutella" dans le formulaire.
+        # Comme elle est curieuse elle regarde tous les choix qui s'offrent à elle.
 
-        # Une fois qu'elle a cliqué sur le bouton recherche une nouvelle page s'affiche. Elle y trouve une liste de substituts.
+        # En haut de la page il y a un menu.
+        # > id 
 
-        # Elle a la possibilité d'un choisir un. En cliquant sur celui qu'elle a choisit une nouvelle page s'affiche avec toute les informations concernant le produit de substitution.
+        # A gauche de ce menu elle voit le logo et le nom du site.
+        # > img
+        # > h2 + text
 
-        # Elle voudrait bien sauvegarder ce produit. Ca tombe bien, un lien lui propose de le faire. En cliquant dessus elle arrive sur une page d'authentification.
+        # A droite elle voit dans l'ordre : un formulaire de recherche et une icone "Créer Mon Compte".
+        # > form
+        # > url
 
-        # Sur cette page on lui propose d'entrer un login et un password, ou de créer un compte utilisateur. Comme elle n'a pas de login, elle clique sur "Créer un compte utilisateur" et elle arrive sur une nouvelle page.
+        # Dans la page, sous le titre et le sous-titre, elle découvre un formulaire de recherche.
+        # > form
 
-        # On lui demande d'entrer son prénom, un email et un password, puis on lui demande de valider. Une fois qu'elle valide une nouvelle page s'affiche.
+        # Plus bas elle lit l'histoire de Colette et de Rémy, les créateurs.
+        # > class
 
-        # Sur cette page elle trouve l'aliment de substitution qu'elle avait choisi.
+        # Sous cette partie elle tombe sur les coordonnées de contact : un numéro de téléphone et un email.
+        # > class
+        # text
 
-        # Satisfaite elle quitte l'application
+        # Pour finir en bas de la page elle trouve les mentions légales ainsi qu'un lien vers la partie contact (qui est juste au-dessus en faite). 
+        # class footer
+        # link
+
+        # Elle se dit que cela fait sérieux et elle se lance en entrant "Nutella" dans le champs de recherche. Elle clic sur le bouton "Chercher" et cela lui ouvre une nouvelle page.
 
 if __name__ == '__main__':
     unittest.main(warnings='ignore')
