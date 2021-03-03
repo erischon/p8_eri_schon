@@ -16,19 +16,22 @@ class NewVisitorTest(unittest.TestCase):
 
         # Elle voit qu'elle est au bon endroit en voyant le titre de la page.
         self.assertIn('The Substitute', self.browser.title) 
-        self.fail('Finish the test!')
+        # self.fail('Finish the test!')
 
         # Elle est satisfaite en lisant le slogan qui lui parle vraiment.
-        # > h2 + text
+        header_text = self.browser.find_element_by_tag_name('h1').text
+        self.assertIn('DU GRAS OUI, MAIS DE QUALITÉ !', header_text)
 
-        # Comme elle est curieuse elle regarde tous les choix qui s'offrent à elle.
+        # Comme elle est curieuse, Lily commence par regarder tous les choix qui s'offrent à elle :
 
         # En haut de la page il y a un menu.
-        # > id 
+        navbar = self.browser.find_element_by_id('mainNav')
 
         # A gauche de ce menu elle voit le logo et le nom du site.
-        # > img
-        # > h2 + text
+        logo = self.browser.find_element_by_tag_name('img')
+        self.assertIn('logo_pur_beurre.png', logo.get_attribute('src'))
+        brand = self.browser.find_element_by_class_name('navbar-brand').text
+        self.assertIn('Pure Beurre', brand)
 
         # A droite elle voit dans l'ordre : un formulaire de recherche et une icone "Créer Mon Compte".
         # > form
