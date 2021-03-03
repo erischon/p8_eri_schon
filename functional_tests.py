@@ -9,7 +9,7 @@ class NewVisitorTest(unittest.TestCase):
     def tearDown(self):
         self.browser.quit()
 
-    def test_can_find_a_substitute_and_add_it_as_favorite(self):
+    def test_hp_look_great(self):
         
         # Lily a entendu parlé d'une application web qui permet de trouver des substituts alimentaires. Elle va y jeter un oeil en utilisant son navigateur web.
         self.browser.get('http://localhost:8000')
