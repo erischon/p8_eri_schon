@@ -16,7 +16,6 @@ class NewVisitorTest(unittest.TestCase):
 
         # Elle voit qu'elle est au bon endroit en voyant le titre de la page.
         self.assertIn('The Substitute', self.browser.title) 
-        # self.fail('Finish the test!')
 
         # Elle est satisfaite en lisant le slogan qui lui parle vraiment.
         header_text = self.browser.find_element_by_tag_name('h1').text
@@ -24,34 +23,40 @@ class NewVisitorTest(unittest.TestCase):
 
         # Comme elle est curieuse, Lily commence par regarder tous les choix qui s'offrent à elle :
 
-        # En haut de la page il y a un menu.
+            # En haut de la page il y a un menu.
         navbar = self.browser.find_element_by_id('mainNav')
 
-        # A gauche de ce menu elle voit le logo et le nom du site.
-        logo = self.browser.find_element_by_tag_name('img')
+            # A gauche de ce menu elle voit le logo et le nom du site.
+        logo = navbar.find_element_by_tag_name('img')
         self.assertIn('logo_pur_beurre.png', logo.get_attribute('src'))
-        brand = self.browser.find_element_by_class_name('navbar-brand').text
+        brand = navbar.find_element_by_class_name('navbar-brand').text
         self.assertIn('Pure Beurre', brand)
 
-        # A droite elle voit dans l'ordre : un formulaire de recherche et une icone "Créer Mon Compte".
-        # > form
-        # > url
+            # Au milieu elle voit un formulaire de recherche.
+        form = navbar.find_element_by_id('product_search_form')
 
-        # Dans la page, sous le titre et le sous-titre, elle découvre un formulaire de recherche.
-        # > form
+            # A droite elle voit un lien pour "Créer Mon Compte".
+        link_mon_compte = navbar.find_element_by_id('link_mon_compte').text
+        self.assertIn('Créer Mon Compte', link_mon_compte)
 
-        # Plus bas elle lit l'histoire de Colette et de Rémy, les créateurs.
-        # > class
+            # Dans la page, sous le titre et le sous-titre, elle découvre un formulaire de recherche.
+        main_form = self.browser.find_element_by_id('main_product_search_form')
 
-        # Sous cette partie elle tombe sur les coordonnées de contact : un numéro de téléphone et un email.
-        # > class
-        # text
+            # Plus bas elle lit l'histoire de Colette et de Rémy, les créateurs.
+        about = self.browser.find_element_by_id('about')
 
-        # Pour finir en bas de la page elle trouve les mentions légales ainsi qu'un lien vers la partie contact (qui est juste au-dessus en faite). 
-        # class footer
-        # link
+            # Sous cette partie elle tombe sur les coordonnées de contact : un numéro de téléphone et un email.
+        contact = self.browser.find_element_by_id('contact')
+        self.assertIn('06 77 55 11 99', contact.find_element_by_id('phone_number').text)
+        self.assertIn('contact@purbeurre.com', contact.find_element_by_id('contact_email').text)
+
+            # Pour finir en bas de la page elle trouve les mentions légales ainsi qu'un lien vers la partie contact (qui est juste au-dessus en faite). 
+        footer = self.browser.find_element_by_id('footer')
+        self.assertIn('Mentions légales', footer.find_element_by_id('link_mentions_legales').text)
+        self.assertIn('Contact', footer.find_element_by_id('link_contact').text)
 
         # Elle se dit que cela fait sérieux et elle se lance en entrant "Nutella" dans le champs de recherche. Elle clic sur le bouton "Chercher" et cela lui ouvre une nouvelle page.
+        # self.fail('Finish the test!')
 
 if __name__ == '__main__':
     unittest.main(warnings='ignore')
