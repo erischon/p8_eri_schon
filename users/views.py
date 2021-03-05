@@ -10,5 +10,4 @@ def signupuser(request):
             user = User.objects.create_user(request.POST['username'], password=request.POST['password1'])
             user.save()
         else:
-            # tell the user the password didn't match
-            pass
+            print("Les mots de passe ne correspondant pas.")
