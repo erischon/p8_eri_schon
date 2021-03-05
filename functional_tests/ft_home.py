@@ -39,6 +39,10 @@ class NewVisitorTest(unittest.TestCase):
         link_mon_compte = navbar.find_element_by_id('link_mon_compte').text
         self.assertIn('Créer Mon Compte', link_mon_compte)
 
+            # Et un autre pour se connecter
+        link_login = navbar.find_element_by_id('link_login').text
+        self.assertIn('Me connecter', link_login)
+
             # Dans la page, sous le titre et le sous-titre, elle découvre un formulaire de recherche.
         main_form = self.browser.find_element_by_id('main_product_search_form')
 
