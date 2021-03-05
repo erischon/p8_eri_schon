@@ -1,13 +1,23 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
+from django.contrib.auth import login
+from django.db import IntegrityError
 
 def signupuser(request):
-    if request.method == 'GET':
-        return render(request, 'users/signup.html', {'form':UserCreationForm()})
-    else:
+    if request.method == 'POST':
         if request.POST['password1'] == request.POST['password2']:
-            user = User.objects.create_user(request.POST['username'], password=request.POST['password1'])
-            user.save()
+            try:
+                user = User.objects.create_user(request.POST['username'], password=request.POST['password1'])
+                user.save()
+                login(request, user)
+                return redirect('moncompte')
+            except IntegrityError:
+                return render(request, 'users/signup.html', {'form':UserCreationForm(), 'error':'Cet email est déjà pris. Merci d\'en choisir un nouveau.'})
         else:
-            print("Les mots de passe ne correspondant pas.")
+            return render(request, 'users/signup.html', {'form':UserCreationForm(), 'error':'Les mots de passe ne sont pas identiques.'})
+    else:
+        return render(request, 'users/signup.html', {'form':UserCreationForm()})
+
+def moncompte(request):
+    return render(request, 'users/moncompte.html')
