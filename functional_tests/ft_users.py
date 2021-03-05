@@ -20,7 +20,7 @@ class NewUser(unittest.TestCase):
 
         # Elle suit les instructions qu'on lui donne
 
-        # Elle donne son prénom
+        # Elle donne son email
 
         # Elle donne un mot de passe
 
