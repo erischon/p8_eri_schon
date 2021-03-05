@@ -24,12 +24,14 @@
 
         <!-- Core theme CSS (includes Bootstrap)-->
         <link rel="stylesheet" href="{% static 'webapp/css/styles.css' %}">
+        <link rel="stylesheet" href="{% static 'webapp/css/mystyles.css' %}">
 
     </head>
 
     <body id="page-top">
         <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">            
+        <!-- <div class="container"> -->
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top bg-dark py-3 mb-5" id="mainNav">            
             <div class="container">
 
                 <div class="col-lg-4 align-self-start">
@@ -76,16 +78,13 @@
             </div>
         </nav>
 
-
-
+        <div class="container">
         {% block content %}
-
         {% endblock %}
+        </div>
         
-
-
         <!-- Footer-->
-        <footer class="bg-dark py-5" id="footer">
+        <footer class="bg-dark py-5 mt-5" id="footer">
             <div class="container">
                 <div class="row">
                     <div class="col small text-center" id="link_mentions_legales"><a href="#" class="text-white">Mentions légales</a></div>
