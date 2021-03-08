@@ -34,7 +34,7 @@
         <nav class="navbar navbar-expand-lg navbar-light fixed-top bg-dark py-3 mb-5" id="mainNav">            
             <div class="container">
 
-                <div class="col-lg-4 align-self-start">
+                <div class="col-lg-3 align-self-start">
                     <a class="navbar-brand js-scroll-trigger" href="#">
                         <img src="{% static 'webapp/assets/img/logo_pur_beurre.png' %}" alt="" class="d-inline-block align-top mr-1" width="30" height="30">
                         Pure Beurre
@@ -52,7 +52,7 @@
 
                 </div>
 
-                <div class="col-lg-4">
+                <div class="col-lg-5">
                     <div class="collapse navbar-collapse" id="navbarResponsive">
 
                         {% if user.is_authenticated %}
@@ -60,14 +60,19 @@
                         <ul class="navbar-nav ml-auto my-2 my-lg-0">
                             <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#">Mon Compte</a></li>
                             <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#">Mes aliments</a></li>
-                            <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#">Déconnexion</a></li>
+                            <li class="nav-item">
+                                <form class="nav-link js-scroll-trigger" action="{% url 'logoutuser' %}" method="POST">
+                                    {% csrf_token %}
+                                    <button type="submit" class="btn btn-link">Logout</button>
+                                </form>
+                            </li>
                         </ul>
 
                         {% else %}
 
                         <ul class="navbar-nav ml-auto my-2 my-lg-0">
-                            <li class="nav-item"><a class="nav-link js-scroll-trigger" id="link_mon_compte" href="#">Créer Mon Compte</a></li>
-                            <li class="nav-item"><a class="nav-link js-scroll-trigger" id="link_login" href="#">Me connecter</a></li>
+                            <li class="nav-item"><a class="nav-link js-scroll-trigger" id="link_mon_compte" href="{% url 'signupuser' %}">Créer Mon Compte</a></li>
+                            <li class="nav-item"><a class="nav-link js-scroll-trigger" id="link_login" href="{% url 'loginuser' %}">Me connecter</a></li>
                         </ul>
 
                         {% endif %}
