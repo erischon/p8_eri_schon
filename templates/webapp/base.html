@@ -35,7 +35,7 @@
             <div class="container">
 
                 <div class="col-lg-3 align-self-start">
-                    <a class="navbar-brand js-scroll-trigger" href="#">
+                    <a class="navbar-brand js-scroll-trigger" href="{% url 'home' %}">
                         <img src="{% static 'webapp/assets/img/logo_pur_beurre.png' %}" alt="" class="d-inline-block align-top mr-1" width="30" height="30">
                         Pure Beurre
                     </a>
@@ -58,7 +58,7 @@
                         {% if user.is_authenticated %}
                         
                         <ul class="navbar-nav ml-auto my-2 my-lg-0">
-                            <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#">Mon Compte</a></li>
+                            <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{% url 'moncompte' %}">Mon Compte</a></li>
                             <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#">Mes aliments</a></li>
                             <li class="nav-item">
                                 <form class="nav-link js-scroll-trigger" action="{% url 'logoutuser' %}" method="POST">
