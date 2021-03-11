@@ -9,7 +9,7 @@ class NewUser(unittest.TestCase):
     def tearDown(self):
         self.browser.quit()
 
-    def test_hp_look_great(self):
+    def test_user_can_create_account(self):
         
         # Lily va sur la page proposée pour créer son compte utilisateur
         self.browser.get('http://localhost:8000/users/signup/')
@@ -39,6 +39,12 @@ class NewUser(unittest.TestCase):
         # Elle clique et arrive bien sur sa page Mon Compte
 
         # Elle remarque que le menu supérieur a changé. Elle y voit maintenant un lien vers ses favoris.
+
+    def test_user_can_login(self):
+        pass
+
+    def test_user_can_logout(self):
+        pass
 
 
 if __name__ == '__main__':
