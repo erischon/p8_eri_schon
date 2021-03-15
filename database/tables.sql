@@ -5,7 +5,7 @@ CREATE TABLE categorie (
 );
 
 CREATE TABLE shops (
-  shop_id       integer RIMARY KEY GENERATED ALWAYS AS IDENTITY,
+  shop_id       integer PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
   shop_name     varchar(150) NOT NULL,
 )
 
@@ -16,17 +16,17 @@ CREATE TABLE brand (
 
 CREATE TABLE nutriscore (
     nut_id      integer PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
-    nut_type    char(1) NOT NULL,
+    nut_type    varchar(1) NOT NULL,
 )
 
 
 
 CREATE TABLE product (
-    prod_id bigint(13) NOT NULL AUTO_INCREMENT,
-    prod_name varchar(250) NOT NULL,
-    prod_url varchar(150) NOT NULL,
-    prod_store varchar(150) NULL,
-    nut_id int(11) NOT NULL,
+    prod_id     int8 NOT NULL,
+    prod_name   varchar(250) NOT NULL,
+    prod_url    varchar(150) NOT NULL,
+    prod_store  varchar(150) NULL,
+    nut_id      integer NOT NULL,
     PRIMARY KEY (prod_id),
     CONSTRAINT fk_nut_id FOREIGN KEY (nut_id) 
         REFERENCES nutriscore (nut_id)
