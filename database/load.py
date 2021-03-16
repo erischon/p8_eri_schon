@@ -20,15 +20,13 @@ class Load:
     def load_nutriscore(self):
         """ I load the nutriscore and their id into the table. """
         try:
-            query = "INSERT INTO nutriscore (nut_id, nut_type) VALUES (1, 'A'), (2, 'B'), (3, 'C'), (4, 'D'), (5, 'E')"
+            query = "INSERT INTO database_nutriscore (nut_id, nut_type) VALUES (1, 'A'), (2, 'B'), (3, 'C'), (4, 'D'), (5, 'E')"
             self.connection.execute(query)
-            self.connection.commit()
-            msg1 = "REUSSITE : Les différents Nutriscore ont été chargés dans la base."
-            return msg1
+            message = "REUSSITE : Les différents Nutriscore ont été chargés dans la base."
+            return message
 
-        except:
-            msg2 = "FAIL"
-            return msg2
+        except Exception as ex:
+            return ex
 
     def load_data(self):
         """ I load all the data from transform.json to their table. """
