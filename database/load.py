@@ -13,7 +13,7 @@ class Load:
     def open_json(self):
         """ I open the json. """
         with open(
-            "thesubstitute/off_data_transform.json", encoding="utf-8"
+            "database/off_data_transform.json", encoding="utf-8"
         ) as json_file:
             self.my_products = json.load(json_file)
 
@@ -23,11 +23,12 @@ class Load:
             query = "INSERT INTO nutriscore (nut_id, nut_type) VALUES (1, 'A'), (2, 'B'), (3, 'C'), (4, 'D'), (5, 'E')"
             self.connection.execute(query)
             self.connection.commit()
-
-            print("REUSSITE : Les différents Nutriscore ont été chargés dans la base.")
+            msg1 = "REUSSITE : Les différents Nutriscore ont été chargés dans la base."
+            return msg1
 
         except:
-            print("REUSSITE : Les Nutriscore étaient dans la base.")
+            msg2 = "FAIL"
+            return msg2
 
     def load_data(self):
         """ I load all the data from transform.json to their table. """
