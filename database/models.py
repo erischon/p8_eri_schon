@@ -5,7 +5,7 @@ class Categorie(models.Model):
     cat_id = models.AutoField(primary_key=True)
     cat_name = models.CharField(max_length=150)
 
-class Shops(models.Model):
+class Shop(models.Model):
     shop_id = models.AutoField(primary_key=True)
     shop_name = models.CharField(max_length=150)
 
@@ -34,7 +34,7 @@ class Prodcat(models.Model):
     prod_id = models.ForeignKey(Product, on_delete=models.CASCADE)
 
 class Prodshop(models.Model):
-    shop_id = models.ForeignKey(Shops, on_delete=models.CASCADE)
+    shop_id = models.ForeignKey(Shop, on_delete=models.CASCADE)
     prod_id = models.ForeignKey(Product, on_delete=models.CASCADE)
 
 class Prodbrand(models.Model):
