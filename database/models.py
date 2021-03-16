@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 class Categorie(models.Model):
     cat_id = models.AutoField(primary_key=True)
@@ -24,7 +25,7 @@ class Product(models.Model):
 
 class Myproduct(models.Model):
     myprod_id = models.AutoField(primary_key=True)
-    # user_id = models.ForeignKey(User, on_delete=models.CASCADE)
+    user_id = models.ForeignKey(User, on_delete=models.CASCADE)
     prod_id = models.ForeignKey(Product, on_delete=models.CASCADE)
     save_time = models.DateTimeField()
 
