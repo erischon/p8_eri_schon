@@ -13,26 +13,11 @@ class Load:
 
     def open_json(self):
         """ I open the json. """
-        with open(
-            "static/database/off_data_transform.json", encoding="utf-8"
-        ) as json_file:
+        with open("static/database/off_data_transform.json", encoding="utf-8") as json_file:
             self.my_products = json.load(json_file)
-
-    # def load_nutriscore(self):
-    #     """ I load the nutriscore and their id into the table. """
-    #     try:
-    #         query = "INSERT INTO database_nutriscore (nut_id, nut_type) VALUES (1, 'A'), (2, 'B'), (3, 'C'), (4, 'D'), (5, 'E')"
-    #         self.connection.execute(query)
-    #         message = "REUSSITE : Les différents Nutriscore ont été chargés dans la base."
-    #         return message
-
-    #     except Exception as ex:
-    #         return ex
 
     def load_data(self):
         """ I load all the data from transform.json to their table. """
-        # Loading the nutriscore
-        # self.load_nutriscore()
 
         for prod_key in list(self.my_products.keys()):
             prod_to_load = self.my_products[prod_key]
@@ -40,17 +25,9 @@ class Load:
             # Insert Products
             if Product.objects.filter(pk=prod_key).exists() is False:
                 nut_id = Nutriscore.objects.get(nut_type=prod_to_load["nutriscore_grade"][0].upper())
-                # return prod_key
-                # query_prod_key = "INSERT INTO database_product SET prod_id = %s"
-                # self.connection.execute(query_prod_key, prod_key)
-                self.connection.execute("INSERT INTO database_product (prod_id, prod_name, prod_url, nut_id) VALUES (%s, %s, %s, %s)", prod_key, prod_to_load['product_name_fr'], prod_to_load['url'], nut_id)
-                # INSERT INTO database_product (prod_id) VALUES (3274080005003)
-
-                # self.connection.execute("INSERT INTO database_product SET prod_id=%s", prod_key)
-                # self.connection.execute("INSERT INTO database_product SET prod_name=%s", prod_to_load['product_name_fr'])
-                # self.connection.execute("INSERT INTO database_product SET prod_url=%s", prod_to_load['url'])
-                # self.connection.execute("INSERT INTO database_product SET nut_id=%s", nut_id)
-                return "ok"
+                query = Product(prod_id=prod_key, prod_name=prod_to_load['product_name_fr'], prod_url=prod_to_load['url'], nut_id=nut_id)
+                query.save()
+                return "OK"
             else:
                 return "Fail"
 
@@ -160,6 +137,17 @@ class Load:
         self.connection.execute(query)
         rows = self.connection.fetchall()
         return rows
+
+    def load_nutriscore(self):
+        """ I load the nutriscore and their id into the table. """
+        try:
+            query = "INSERT INTO database_nutriscore (nut_id, nut_type) VALUES (1, 'A'), (2, 'B'), (3, 'C'), (4, 'D'), (5, 'E')"
+            self.connection.execute(query)
+            message = "REUSSITE : Les différents Nutriscore ont été chargés dans la base."
+            return message
+
+        except Exception as ex:
+            return ex
 
 if __name__ == "__main__":
     loader = Load()
