@@ -2,7 +2,7 @@ import json
 from itertools import chain
 
 from django.db import connection, models
-from database.models import Product
+from database.models import Product, Nutriscore
 
 
 class Load:
@@ -18,16 +18,16 @@ class Load:
         ) as json_file:
             self.my_products = json.load(json_file)
 
-    def load_nutriscore(self):
-        """ I load the nutriscore and their id into the table. """
-        try:
-            query = "INSERT INTO database_nutriscore (nut_id, nut_type) VALUES (1, 'A'), (2, 'B'), (3, 'C'), (4, 'D'), (5, 'E')"
-            self.connection.execute(query)
-            message = "REUSSITE : Les différents Nutriscore ont été chargés dans la base."
-            return message
+    # def load_nutriscore(self):
+    #     """ I load the nutriscore and their id into the table. """
+    #     try:
+    #         query = "INSERT INTO database_nutriscore (nut_id, nut_type) VALUES (1, 'A'), (2, 'B'), (3, 'C'), (4, 'D'), (5, 'E')"
+    #         self.connection.execute(query)
+    #         message = "REUSSITE : Les différents Nutriscore ont été chargés dans la base."
+    #         return message
 
-        except Exception as ex:
-            return ex
+    #     except Exception as ex:
+    #         return ex
 
     def load_data(self):
         """ I load all the data from transform.json to their table. """
@@ -38,14 +38,21 @@ class Load:
             prod_to_load = self.my_products[prod_key]
 
             # Insert Products
-            if self.read_produits(prod_key) is False:
-                nut_id = self.read_nutriscore(prod_to_load["nutriscore_grade"][0])
-                add_product = ("INSERT INTO database_product SET prod_id=%s, prod_name=%s, prod_url=%s, nut_id=%s")
-                data_product = (prod_key, prod_to_load['product_name_fr'], prod_to_load['url'], nut_id)
-                self.connection.execute(add_product, data_product)
-                # self.connection.commit()
+            if Product.objects.filter(pk=prod_key).exists() is False:
+                nut_id = Nutriscore.objects.get(nut_type=prod_to_load["nutriscore_grade"][0].upper())
+                # return prod_key
+                # query_prod_key = "INSERT INTO database_product SET prod_id = %s"
+                # self.connection.execute(query_prod_key, prod_key)
+                self.connection.execute("INSERT INTO database_product (prod_id, prod_name, prod_url, nut_id) VALUES (%s, %s, %s, %s)", prod_key, prod_to_load['product_name_fr'], prod_to_load['url'], nut_id)
+                # INSERT INTO database_product (prod_id) VALUES (3274080005003)
+
+                # self.connection.execute("INSERT INTO database_product SET prod_id=%s", prod_key)
+                # self.connection.execute("INSERT INTO database_product SET prod_name=%s", prod_to_load['product_name_fr'])
+                # self.connection.execute("INSERT INTO database_product SET prod_url=%s", prod_to_load['url'])
+                # self.connection.execute("INSERT INTO database_product SET nut_id=%s", nut_id)
+                return "ok"
             else:
-                pass
+                return "Fail"
 
             # Insert Categories
             for n in range(len(prod_to_load["categories"])):
@@ -131,16 +138,12 @@ class Load:
         else:
             return int(result[0][0])
 
-    def read_produits(self, value):
+    def find_product(self, value):
         """  I search if the product is already in the table. """
-        # query = ("SELECT prod_id FROM database_product WHERE prod_id LIKE '%s'")
-        # self.connection.execute(query, (int(value),))
-        # result = self.connection.fetchall()
-        result = Products.objects.get('%s')
-        if len(result) < 1:
-            return False
+        if Product.objects.filter(pk=value).exists():
+            return True      
         else:
-            return int(result[0][0])
+            return False
     
     def read_nutriscore(self, value):
         """  I search if the nutriscore is already in the table. """
