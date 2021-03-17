@@ -1,7 +1,8 @@
 import json
 from itertools import chain
 
-from django.db import connection
+from django.db import connection, models
+from database.models import Product
 
 
 class Load:
@@ -13,7 +14,7 @@ class Load:
     def open_json(self):
         """ I open the json. """
         with open(
-            "database/off_data_transform.json", encoding="utf-8"
+            "static/database/off_data_transform.json", encoding="utf-8"
         ) as json_file:
             self.my_products = json.load(json_file)
 
@@ -31,7 +32,7 @@ class Load:
     def load_data(self):
         """ I load all the data from transform.json to their table. """
         # Loading the nutriscore
-        self.load_nutriscore()
+        # self.load_nutriscore()
 
         for prod_key in list(self.my_products.keys()):
             prod_to_load = self.my_products[prod_key]
@@ -39,10 +40,10 @@ class Load:
             # Insert Products
             if self.read_produits(prod_key) is False:
                 nut_id = self.read_nutriscore(prod_to_load["nutriscore_grade"][0])
-                add_product = ("INSERT INTO produits SET prod_id=%s, prod_name=%s, prod_url=%s, nut_id=%s")
+                add_product = ("INSERT INTO database_product SET prod_id=%s, prod_name=%s, prod_url=%s, nut_id=%s")
                 data_product = (prod_key, prod_to_load['product_name_fr'], prod_to_load['url'], nut_id)
                 self.connection.execute(add_product, data_product)
-                self.connection.commit()
+                # self.connection.commit()
             else:
                 pass
 
@@ -50,62 +51,59 @@ class Load:
             for n in range(len(prod_to_load["categories"])):
                 # In categories table
                 if self.read_categorie(prod_to_load["categories"][n]) is False:
-                    add_categorie = ("INSERT INTO categorie SET cat_name=%s")
+                    add_categorie = ("INSERT INTO database_categorie SET cat_name=%s")
                     self.connection.execute(add_categorie, (prod_to_load['categories'][n],))
                     self.connection.commit()
                 # In prodcat table
                 cat_id = self.read_categorie(prod_to_load["categories"][n])
                 check = self.search_id(
-                    f"SELECT * FROM prodcat WHERE cat_id='{cat_id}' AND prod_id='{prod_key}' "
+                    f"SELECT * FROM database_prodcats WHERE cat_id='{cat_id}' AND prod_id='{prod_key}' "
                 )
                 if not (check):
-                    add_prodcat = ("INSERT INTO prodcat SET cat_id=%s, prod_id=%s")
+                    add_prodcat = ("INSERT INTO database_prodcat SET cat_id=%s, prod_id=%s")
                     self.connection.execute(add_prodcat, (cat_id, prod_key))
-                    self.connection.commit()
+                    # self.connection.commit()
 
             # Insert Brand
             for n in range(len(prod_to_load["brands"])):
                 # In brand table
                 if self.read_brand(prod_to_load["brands"][n]) is False:
-                    add_brand = ("INSERT INTO brand SET brand_name=%s")
+                    add_brand = ("INSERT INTO database_brand SET brand_name=%s")
                     self.connection.execute(add_brand, (prod_to_load['brands'][n],))
-                    self.connection.commit()
+                    # self.connection.commit()
                 # In prodbrand table
                 brand_id = self.read_brand(prod_to_load["brands"][n])
                 check = self.search_id(
-                    f"SELECT * FROM prodbrand WHERE brand_id='{brand_id}' AND prod_id='{prod_key}' "
+                    f"SELECT * FROM database_prodbrand WHERE brand_id='{brand_id}' AND prod_id='{prod_key}' "
                 )
                 if not (check):
-                    add_prodbrand = ("INSERT INTO prodbrand SET brand_id=%s, prod_id=%s")
+                    add_prodbrand = ("INSERT INTO database_prodbrand SET brand_id=%s, prod_id=%s")
                     self.connection.execute(add_prodbrand, (brand_id, prod_key))
-                    self.connection.commit()
+                    # self.connection.commit()
 
             # Insert Shops
             for n in range(len(prod_to_load["stores"])):
                 # In shops table
                 if self.read_shop(prod_to_load["stores"][n]) is False:
-                    add_shop = ("INSERT INTO shops SET shop_name=%s")
+                    add_shop = ("INSERT INTO database_shop SET shop_name=%s")
                     self.connection.execute(add_shop, (prod_to_load['stores'][n],))
-                    self.connection.commit()
+                    # self.connection.commit()
                 # In prodshop table
                 shop_id = self.read_shop(prod_to_load["stores"][n])
                 check = self.search_id(
-                    f"SELECT * FROM prodshop WHERE shop_id='{shop_id}' AND prod_id='{prod_key}' "
+                    f"SELECT * FROM database_prodshop WHERE shop_id='{shop_id}' AND prod_id='{prod_key}' "
                 )
                 if not (check):
-                    add_prodshop = ("INSERT INTO prodshop SET shop_id=%s, prod_id=%s")
+                    add_prodshop = ("INSERT INTO database_prodshop SET shop_id=%s, prod_id=%s")
                     self.connection.execute(add_prodshop, (shop_id, prod_key))
-                    self.connection.commit()
+                    # self.connection.commit()
 
-        print(
-            f"""
-            REUSSITE du chargement des produits :
-            {len(self.my_products.keys())} produits sont entrés en base."""
-        )
+        message = "REUSSITE du chargement des produits"
+        return message
 
     def read_categorie(self, value):
         """ I search if the category is already in the table. """
-        query = ("SELECT cat_id FROM categories WHERE cat_name LIKE %s")
+        query = ("SELECT cat_id FROM database_categorie WHERE cat_name LIKE %s")
         self.connection.execute(query, (value,))
         result = self.connection.fetchall()
         if len(result) < 1:
@@ -115,7 +113,7 @@ class Load:
 
     def read_brand(self, value):
         """  I search if the brand is already in the table.  """
-        query = ("SELECT brand_id FROM brand WHERE brand_name LIKE %s")
+        query = ("SELECT brand_id FROM database_brand WHERE brand_name LIKE %s")
         self.connection.execute(query, (value,))
         result = self.connection.fetchall()
         if len(result) < 1:
@@ -125,7 +123,7 @@ class Load:
 
     def read_shop(self, value):
         """  I search if the shop is already in the table. """
-        query = ("SELECT shop_id FROM shops WHERE shop_name LIKE %s")
+        query = ("SELECT shop_id FROM database_shop WHERE shop_name LIKE %s")
         self.connection.execute(query, (value,))
         result = self.connection.fetchall()
         if len(result) < 1:
@@ -135,9 +133,10 @@ class Load:
 
     def read_produits(self, value):
         """  I search if the product is already in the table. """
-        query = ("SELECT prod_id FROM produits WHERE prod_id LIKE '%s'")
-        self.connection.execute(query, (int(value),))
-        result = self.connection.fetchall()
+        # query = ("SELECT prod_id FROM database_product WHERE prod_id LIKE '%s'")
+        # self.connection.execute(query, (int(value),))
+        # result = self.connection.fetchall()
+        result = Products.objects.get('%s')
         if len(result) < 1:
             return False
         else:
@@ -145,7 +144,7 @@ class Load:
     
     def read_nutriscore(self, value):
         """  I search if the nutriscore is already in the table. """
-        query = ("SELECT nut_id FROM nutriscore WHERE nut_type LIKE %s")
+        query = ("SELECT nut_id FROM database_nutriscore WHERE nut_type LIKE %s")
         self.connection.execute(query, (value,))
         result = self.connection.fetchall()
         if len(result) < 1:
