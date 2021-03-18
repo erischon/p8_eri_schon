@@ -1,3 +1,22 @@
 <h1>ETL</h1>
 
-{{ message }}
+<h2>Extraction</h2>
+<p><a href="{% url 'etl_extract' %} ">Lancer l'extraction</a></p>
+
+<p>
+{{ message_extract }}
+</p>
+
+<h2>Transform</h2>
+<p><a href="{% url 'etl_transform' %} ">Lancer le Transform</a></p>
+
+<p>
+{{ message_transform }}
+</p>
+
+<h2>Loading</h2>
+<p><a href="{% url 'etl_load' %} ">Lancer le loading</a></p>
+
+<p>
+{{ message_load }}
+</p>
