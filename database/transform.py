@@ -38,6 +38,8 @@ class Transform:
 
         self.transform_field(self.data_clean)
 
+        return "REUSSITE"
+
     def transform_field(self, data_clean):
         """ I try to clean the data. """
         for code in data_clean:
@@ -63,7 +65,7 @@ class Transform:
         with open("static/database/off_data_transform.json", "w") as fp:
             json.dump(data_clean, fp)
 
-        return "REUSSITE"
+        return
 
 
 if __name__ == "__main__":
