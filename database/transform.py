@@ -64,7 +64,6 @@ class Transform:
         """ I create the transform json. """
         with open("static/database/off_data_transform.json", "w") as fp:
             json.dump(data_clean, fp)
-
         return
 
 
