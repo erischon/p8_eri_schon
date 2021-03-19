@@ -20,8 +20,8 @@ class Nutriscore(models.Model):
 class Product(models.Model):
     prod_id = models.BigIntegerField(primary_key=True)
     prod_name = models.CharField(max_length=250)
-    prod_url = models.CharField(max_length=150)
-    prod_image = models.CharField(max_length=150, null=True)
+    prod_url = models.CharField(max_length=250)
+    prod_image = models.CharField(max_length=250, null=True)
     nut_id = models.ForeignKey(Nutriscore, on_delete=models.CASCADE)
 
 class Myproduct(models.Model):
