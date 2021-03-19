@@ -28,21 +28,17 @@ class Extract:
             )
             products = request.json()
 
-            with open("off_data_extract.json", "w") as f:
+            with open("static/database/off_data_extract.json", "w") as f:
                 json.dump(products, f)
 
-            print(
-                f"""
-            REUSSITE de l'Extraction :
-            {len(products['products'])} produits ont été téléchargés dans le fichier off_data_extract.json."""
-            )
+            return "REUSSITE de l'Extraction"
 
         except Exception as error:
-            print("ECHEC : les produits ne sont pas téléchargés.", f"Type de l'erreur : {error}")
+            return "ECHEC : les produits ne sont pas téléchargés.", f"Type de l'erreur : {error}"
 
 
 if __name__ == "__main__":
     extract = Extract()
 
     # === Tests of methods ===
-    extract.extract()
+    # extract.extract()

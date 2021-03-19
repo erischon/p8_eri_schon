@@ -12,13 +12,14 @@ class Transform:
             "url",
             "brands",
             "stores",
+            "image_small_url",
         )
         self.data_clean = {}
         self.open_json()
 
     def open_json(self):
         """ I open the extract json. """
-        with open("off_data_extract.json", encoding="utf-8") as json_file:
+        with open("static/database/off_data_extract.json", encoding="utf-8") as json_file:
             self.data_extract = json.load(json_file)
 
     def transform_basic(self):
@@ -30,12 +31,19 @@ class Transform:
             ] = {}
 
             for field in self.fields:
-                if field != self.fields[1]:
+                try:
+                    if field != self.fields[1]:
+                        self.data_clean[
+                            self.data_extract["products"][n][self.fields[1]].lower()
+                        ][field] = self.data_extract["products"][n][field].lower()
+                except KeyError:
                     self.data_clean[
-                        self.data_extract["products"][n][self.fields[1]].lower()
-                    ][field] = self.data_extract["products"][n][field].lower()
+                            self.data_extract["products"][n][self.fields[1]].lower()
+                        ][field] = 'X'
 
         self.transform_field(self.data_clean)
+
+        return "REUSSITE"
 
     def transform_field(self, data_clean):
         """ I try to clean the data. """
@@ -59,14 +67,9 @@ class Transform:
 
     def create_json(self, data_clean):
         """ I create the transform json. """
-        with open("off_data_transform.json", "w") as fp:
+        with open("static/database/off_data_transform.json", "w") as fp:
             json.dump(data_clean, fp)
-
-        print(
-            f"""
-            REUSSITE de la Transformation :
-            Les produits ont été téléchargés dans le fichier off_data_transform.json."""
-        )
+        return
 
 
 if __name__ == "__main__":
