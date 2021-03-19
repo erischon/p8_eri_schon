@@ -25,7 +25,7 @@ class Load:
             # Insert Product
             if Product.objects.filter(pk=prod_key).exists() is False:
                 nut_id = Nutriscore.objects.get(nut_type=prod_to_load["nutriscore_grade"][0].upper())
-                query = Product(prod_id=prod_key, prod_name=prod_to_load['product_name_fr'], prod_url=prod_to_load['url'], nut_id=nut_id)
+                query = Product(prod_id=prod_key, prod_name=prod_to_load['product_name_fr'], prod_url=prod_to_load['url'], prod_image=prod_to_load['image_small_url'], nut_id=nut_id)
                 query.save()
             else:
                 pass
@@ -77,16 +77,6 @@ class Load:
         message = "REUSSITE du chargement des produits"
         return message
 
-    def load_nutriscore(self):
-        """ I load the nutriscore and their id into the table. """
-        try:
-            query = "INSERT INTO database_nutriscore (nut_id, nut_type) VALUES (1, 'A'), (2, 'B'), (3, 'C'), (4, 'D'), (5, 'E')"
-            self.connection.execute(query)
-            message = "REUSSITE : Les différents Nutriscore ont été chargés dans la base."
-            return message
-
-        except Exception as ex:
-            return ex
 
 if __name__ == "__main__":
     loader = Load()
