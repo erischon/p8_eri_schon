@@ -16,7 +16,7 @@ class Extract:
             "tag_contains_0": "contains",
             "tag_0": "france",
             "page_size": 40,
-            "page": 5,
+            "page": 1,
             "sort_by": "unique_scans_n",
         }
 
