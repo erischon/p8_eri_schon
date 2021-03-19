@@ -31,10 +31,15 @@ class Transform:
             ] = {}
 
             for field in self.fields:
-                if field != self.fields[1]:
+                try:
+                    if field != self.fields[1]:
+                        self.data_clean[
+                            self.data_extract["products"][n][self.fields[1]].lower()
+                        ][field] = self.data_extract["products"][n][field].lower()
+                except KeyError:
                     self.data_clean[
-                        self.data_extract["products"][n][self.fields[1]].lower()
-                    ][field] = self.data_extract["products"][n][field].lower()
+                            self.data_extract["products"][n][self.fields[1]].lower()
+                        ][field] = 'X'
 
         self.transform_field(self.data_clean)
 
@@ -70,4 +75,4 @@ class Transform:
 if __name__ == "__main__":
     transform = Transform()
 
-    # transform.transform_basic()
+    transform.transform_basic()
