@@ -1,17 +1,18 @@
 from django.shortcuts import render
-from database.models import Product
+from database.models import Product, Prodcat, Categorie
 
 def search_sub(request):
-    result_list = {}
     query = "nutella"
-    results = Product.objects.filter(prod_name=query)
-    if not results:
-        results = "Désolé, nous n'avons pas ce produit dans notre base de données."
+    result_info = {}
+    result = Product.objects.filter(prod_name=query)[0]
+
+    if not result:
+        result = "Désolé, nous n'avons pas ce produit dans notre base de données."
     else:
-        for result in results:
-            prod_id = results.values('prod_id')
-            nutriscore = results.values('nut_id')
+        prod_id = result.prod_id
+        nutriscore = result.nut_id.nut_type
+        categorie = Prodcat.objects.filter(prod_id=result.prod_id)
 
-            result_list = {result: {'prod_id': prod_id, 'nutriscore': nutriscore}}
+        result_info = {'prod_id': prod_id, 'nutriscore': nutriscore, 'categorie': categorie}
 
-    return render(request, 'search/results.html', {'results': result_list}) 
+    return render(request, 'search/results.html', {'results': result_info}) 
