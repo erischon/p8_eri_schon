@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'webapp',
     'users',
     'database',
+    'search',
 ]
 
 MIDDLEWARE = [
