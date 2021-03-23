@@ -1,4 +1,5 @@
-from database.models import Product, Prodcat, Categorie
+from database.models import Product, Prodcat, Categorie, Nutriscore
+from django.db.models import F
 
 class Search:
 
@@ -22,22 +23,20 @@ class Search:
             result = result[0]
             return result
     
-    def find_substitute(self, query):
+    def find_substitute(self, product):
         """ I'm the algorithm. """
-        result = query
         result_info = {}
-        # categorie = Prodcat.objects.filter(prod_id=query.prod_id)[0]
+        categorie = Prodcat.objects.filter(prod_id=product.prod_id)[0]
 
-        # prod_list = Prodcat.objects.filter(cat_id=categorie.cat_id)
-        # prod_list = prod_list.prod_id
+# SELECT p.prod_id, p.prod_nom, p.nut_id 
+# FROM produits p 
+# INNER JOIN prodcat pc 
+# WHERE pc.cat_id ='{cat_id}' AND p.prod_id = pc.prod_id AND p.nut_id < '{prod_nut}'
+# ORDER BY p.nut_id, p.prod_nom ASC LIMIT 5;"
 
-        categorie_list = Prodcat.objects.filter(prod_id=result.prod_id)
-        for categorie in categorie_list:
-            categorie = categorie.cat_id.cat_name
-            self.categories.append(categorie)
+        product_list = Product.objects.filter(prodcat__cat_id=categorie.cat_id).filter(prod_id=F('prodcat__prod_id')).filter(nut_id__lte=F('nut_id')) 
 
-        prod_list = self.categories
-        return prod_list
+        return product_list
 
     def product_infos(self, object):
         """ I extract the informations taht I need. """
