@@ -25,18 +25,29 @@ class Search:
     
     def find_substitute(self, product):
         """ I'm the algorithm. """
-        result_info = {}
+        nutriscore = product.nut_id.nut_id
+        # /!\ Attention pour le moment je ne cherche que sur UNE categorie
         categorie = Prodcat.objects.filter(prod_id=product.prod_id)[0]
 
-# SELECT p.prod_id, p.prod_nom, p.nut_id 
-# FROM produits p 
-# INNER JOIN prodcat pc 
-# WHERE pc.cat_id ='{cat_id}' AND p.prod_id = pc.prod_id AND p.nut_id < '{prod_nut}'
-# ORDER BY p.nut_id, p.prod_nom ASC LIMIT 5;"
-
-        product_list = Product.objects.filter(prodcat__cat_id=categorie.cat_id).filter(prod_id=F('prodcat__prod_id')).filter(nut_id__lte=F('nut_id')) 
+        product_list = Product.objects.filter(prodcat__cat_id=categorie.cat_id).filter(nut_id__lte=(nutriscore-1)).order_by('nut_id', 'prod_name').values_list()[:10]
 
         return product_list
+
+    def result_infos(self, queryset):
+        """ """
+        result_info = []
+
+        for product in queryset:
+            prod_id = product[0]
+            prod_name = product[1]
+            prod_url = product[2]
+            prod_image = product[3]
+            nutriscore = Nutriscore.objects.get(nut_id=product[4]).nut_type
+
+            result_info.append({'prod_id': prod_id, 'prod_name': prod_name, 'prod_url': prod_url, 'prod_image': prod_image, 'nutriscore': nutriscore})
+
+        return result_info
+
 
     def product_infos(self, object):
         """ I extract the informations taht I need. """
