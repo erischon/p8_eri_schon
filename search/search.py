@@ -27,6 +27,7 @@ class Search:
         """ I'm the algorithm. """
         nutriscore = product.nut_id.nut_id
         # /!\ Attention pour le moment je ne cherche que sur UNE categorie
+        # for categorie in Prodcat.objects.filter(prod_id=product.prod_id):
         categorie = Prodcat.objects.filter(prod_id=product.prod_id)[0]
 
         product_list = Product.objects.filter(prodcat__cat_id=categorie.cat_id).filter(nut_id__lte=(nutriscore-1)).order_by('nut_id', 'prod_name').values_list()[:10]
