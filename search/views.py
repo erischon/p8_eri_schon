@@ -11,4 +11,4 @@ def search_sub(request):
 
     result_info = search.find_substitute(search_product)
 
-    return render(request, 'search/results.html', {'product': product, 'results': search_product}) 
+    return render(request, 'search/results.html', {'product': product, 'results': result_info}) 
