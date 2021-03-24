@@ -6,11 +6,15 @@
 
     <h2>Vous cherchez un substitut pour :</h2>
 
-    {{ product }}
+    {{ product.prod_name }}
 
     <h2>Vous pouvez remplacer cet aliment par :</h2>
 
-    {{ results }}
+    {% for result in results %}
+
+    <p>{{ result.prod_name }}</p>
+
+    {% endfor %}
 
 </div>
 {% endblock %}
