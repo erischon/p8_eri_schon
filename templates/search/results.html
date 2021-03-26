@@ -4,21 +4,25 @@
     
     <h1>Résultats</h1>
 
-    <h2>Vous cherchez un substitut pour :</h2>
+    {% if product == "None" %}
 
-    {{ product.prod_name }}
+        <h2>Désolé, nous n'avons pas ce produit dans notre base de données.</h2>
 
-    <h2>Vous pouvez remplacer cet aliment par :</h2>
+    {% else %}
 
-    {% for result in results %}
+        <h2>Vous cherchez un substitut pour :</h2>
 
-    <p>{{ result.prod_name }}</p>
+            {{ product.prod_name }}
 
-    {% endfor %}
+        <h2>Vous pouvez remplacer cet aliment par :</h2>
 
-    <h2>Test</h2>
+        {% for result in results %}
 
-    {{ search_product }}
+        <p>{{ result.prod_name }}</p>
+
+        {% endfor %}
+
+    {% endif %}
 
 </div>
 {% endblock %}
