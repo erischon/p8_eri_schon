@@ -20,8 +20,8 @@
                 </div>
 
                 <div id="search-form" class="col-lg-10 align-self-start">
-                    <form class="form-inline justify-content-center m-5">
-                        <input type="text" class="col-lg-6 form-control-lg m-1" id="main_product_search_form" placeholder="Produit">             
+                    <form class="form-inline justify-content-center m-5" action="{% url 'search_results' %}" method="GET">
+                        <input type="text" class="col-lg-6 form-control-lg m-1" id="main_product_search_form" placeholder="Produit" name="q">             
                         <button type="submit" class="col-lg-2 btn-lg btn-primary m-1">Chercher</button>
                     </form>
                 </div>
