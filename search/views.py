@@ -15,7 +15,6 @@ def search_results(request):
     if not search_product:
         return render(request, 'search/results.html', {'product': "None"})
     else:
-
         product = search.product_infos(search_product)
 
         for categorie in product['categories']:
