@@ -45,10 +45,8 @@
 
                 <div class="col-lg-4 d-none d-lg-block">
 
-                    <form class="form-inline justify-content-center" action="{% url 'get_query' %}" method="POST">
-                        {% csrf_token %}
-                        {{ form }}
-                        <input type="text" class="col-lg-7 form-control-sm mr-1" id="product_search_form" placeholder="Produit">             
+                    <form class="form-inline justify-content-center" action="{% url 'search_results' %}" method="GET">
+                        <input type="text" class="col-lg-7 form-control-sm mr-1" id="product_search_form" placeholder="Produit" name="q">             
                         <button type="submit" class="col-lg-3 btn-sm btn-primary" value="Submit">Chercher</button>
                     </form>
 
