@@ -20,7 +20,6 @@ class Search:
             return exception
 
         if not result:
-            result = "Désolé, nous n'avons pas ce produit dans notre base de données."
             return result
         else:
             # I take the first result
