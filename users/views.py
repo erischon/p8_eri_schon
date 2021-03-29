@@ -36,6 +36,5 @@ def logoutuser(request):
         logout(request)
         return redirect('home')
 
-
 def moncompte(request):
     return render(request, 'users/moncompte.html')
