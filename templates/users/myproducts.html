@@ -4,9 +4,13 @@
     
     <h1>Mes sauvegardes</h1>
 
+    <ul>
+        {% for product in myproducts %}
 
-{{ myproducts }}
-
+            <li>{{ product.prod_name }}</li>
+        
+        {% endfor %}
+    </ul>
 
 
 </div>
