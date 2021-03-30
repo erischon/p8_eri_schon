@@ -3,6 +3,7 @@ from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth.models import User
 from django.contrib.auth import login, logout, authenticate
 from django.db import IntegrityError
+from database.models import Myproduct
 
 def signupuser(request):
     if request.method == 'POST':
@@ -38,3 +39,7 @@ def logoutuser(request):
 
 def moncompte(request):
     return render(request, 'users/moncompte.html')
+
+def myproducts(request):
+    myproducts = Myproduct.objects.filter(user_id=request.user)
+    return render(request, 'users/myproducts.html', {'myproducts': myproducts})
