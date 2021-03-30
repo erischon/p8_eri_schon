@@ -23,15 +23,16 @@ class Product(models.Model):
     prod_url = models.CharField(max_length=250)
     prod_image = models.CharField(max_length=250, null=True)
     nut_id = models.ForeignKey(Nutriscore, on_delete=models.CASCADE)
+    myproduct = models.ManyToManyField(User)
 
     def __str__(self):
         return self.prod_name
 
-class Myproduct(models.Model):
-    myprod_id = models.AutoField(primary_key=True)
-    user_id = models.ForeignKey(User, on_delete=models.CASCADE)
-    prod_id = models.ForeignKey(Product, on_delete=models.CASCADE)
-    save_time = models.DateTimeField()
+# class Myproduct(models.Model):
+#     myprod_id = models.AutoField(primary_key=True)
+#     user_id = models.ForeignKey(User, on_delete=models.CASCADE)
+#     prod_id = models.ForeignKey(Product, on_delete=models.CASCADE)
+#     save_time = models.DateTimeField()
 
 class Prodcat(models.Model):
     cat_id = models.ForeignKey(Categorie, on_delete=models.CASCADE)
