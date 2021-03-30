@@ -16,11 +16,13 @@
 
         <h2>Vous pouvez remplacer cet aliment par :</h2>
 
-        {% for result in results %}
+            <ul>
+                {% for result in results %}
+                    <li>{{ result.prod_name }}</li>
+                {% endfor %}
+            </ul>
 
-        <p>{{ result.prod_name }}</p>
 
-        {% endfor %}
 
     {% endif %}
 
