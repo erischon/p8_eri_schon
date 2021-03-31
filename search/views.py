@@ -26,4 +26,8 @@ def search_results(request):
         return render(request, 'search/results.html', {'product': product, 'results': result_infos}) 
 
 def search_sub(request):
-    return render(request, 'webapp/home.html') 
+    return render(request, 'webapp/home.html')
+
+def saving(request):
+    ''' I'm saving a Product in the User's Myproduct model. '''
+    return redirect('myproducts')
