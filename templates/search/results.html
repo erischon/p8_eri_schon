@@ -18,7 +18,7 @@
 
             <ul>
                 {% for result in results %}
-                    <li>{{ result.prod_name }}</li>
+                    <li>{{ result.prod_name }} - <a href="{% url 'saving' product=result.prod_id %}">Sauvegarder</a></li>
                 {% endfor %}
             </ul>
 
