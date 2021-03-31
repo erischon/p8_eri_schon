@@ -44,3 +44,4 @@ def moncompte(request):
 def myproducts(request):
     myproducts = Product.objects.filter(myproduct=request.user)
     return render(request, 'users/myproducts.html', {'myproducts': myproducts})
+
