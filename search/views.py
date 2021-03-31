@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponseRedirect
 
-from database.models import Product, Prodcat, Categorie
+from database.models import Product, Prodcat, Categorie, User
 from search.search import Search
 from .forms import SearchForm
 
@@ -30,4 +30,6 @@ def search_sub(request):
 
 def saving(request, product):
     ''' I'm saving a Product in the User's Myproduct model. '''
+    product = Product.objects.get(prod_id=product)
+    product.myproduct.add(request.user)
     return redirect('myproducts')
