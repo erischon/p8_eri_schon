@@ -32,7 +32,6 @@ def loginuser(request):
     else:
         return render(request, 'users/login.html', {'form':AuthenticationForm()})
 
-
 def logoutuser(request):
     if request.method == 'POST':
         logout(request)
@@ -44,4 +43,9 @@ def moncompte(request):
 def myproducts(request):
     myproducts = Product.objects.filter(myproduct=request.user)
     return render(request, 'users/myproducts.html', {'myproducts': myproducts})
+
+def myproducts_delete(request, product):
+    myproduct = Product.objects.get(prod_id=product)
+    myproduct.myproduct.clear()
+    return redirect('myproducts')
 
