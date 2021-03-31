@@ -7,7 +7,7 @@
     <ul>
         {% for product in myproducts %}
 
-            <li>{{ product.prod_name }}</li>
+            <li>{{ product.prod_name }} - <a href="{% url 'myproducts_delete' product=product.prod_id %}">Effacer</a></li>
         
         {% endfor %}
     </ul>
