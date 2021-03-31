@@ -28,6 +28,6 @@ def search_results(request):
 def search_sub(request):
     return render(request, 'webapp/home.html')
 
-def saving(request):
+def saving(request, product):
     ''' I'm saving a Product in the User's Myproduct model. '''
     return redirect('myproducts')
