@@ -16,15 +16,73 @@
 
         <h2>Vous pouvez remplacer cet aliment par :</h2>
 
-            <ul>
+            <!-- <ul>
                 {% for result in results %}
                     <li>{{ result.prod_name }} - <a href="{% url 'saving' product=result.prod_id %}">Sauvegarder</a></li>
                 {% endfor %}
-            </ul>
+            </ul> -->
+
+            <div class="container">
+
+                <div class="row">
+                    {% for result in results %}
+
+                    <div class="col-lg-3 col-sm-6 mb-4">
+                        <div class="card h-100">
+                            <a href="#">
+                                <img class="card-img-top img-product" src="{{ result.prod_image }}" alt="{{ result.prod_name }}">
+                            </a>
+                            <div class="card-body">
+                                <h4 class="card-title">
+                                <a href="#">{{ result.prod_name }}</a>
+                                </h4>
+                                <p><a href="{% url 'saving' product=result.prod_id %}">Sauvegarder</a></p>
+                            </div>
+                            <div class="card-badge">{{ result.nutriscore }}</div>
+                        </div>
+                    </div>
+
+                    {% endfor %}
+                </div>
+
+            </div>
 
 
 
     {% endif %}
+
+ 
+      <!-- Pagination -->
+      <ul class="pagination justify-content-center">
+        <li class="page-item">
+          <a class="page-link" href="#" aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+                <span class="sr-only">Previous</span>
+              </a>
+        </li>
+        <li class="page-item">
+          <a class="page-link" href="#">1</a>
+        </li>
+        <li class="page-item">
+          <a class="page-link" href="#">2</a>
+        </li>
+        <li class="page-item">
+          <a class="page-link" href="#">3</a>
+        </li>
+        <li class="page-item">
+          <a class="page-link" href="#" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+                <span class="sr-only">Next</span>
+              </a>
+        </li>
+      </ul>
+    
+
+
+
+
+
+
 
 </div>
 {% endblock %}
