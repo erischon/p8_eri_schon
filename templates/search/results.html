@@ -1,8 +1,21 @@
 {% extends 'webapp/base.html' %} {% load static %} {% block content %}
 
+
+<div class="page-holder bg-cover bg-product pt-5 mt-5">
+  <header class="text-center text-white py-5">
+    <div class="row">
+      <div class="col-6">
+        <h1 class="display-4 font-weight-bold mb-4">{{ product.prod_name }}</h1>
+      </div>
+      <div class="col-4 mr-4">
+        <img class="img-fuild img-product-top" src="{{ product.prod_image }}" alt="">
+      </div>
+    </div>
+  </header>
+</div>
+
+
 <div class="container pt-5 mt-5">
-    
-    <h1>Résultats</h1>
 
     {% if product == "None" %}
 
@@ -10,19 +23,9 @@
 
     {% else %}
 
-        <h2>Vous cherchez un substitut pour :</h2>
+        <h2 class="text-center mb-5">Vous pouvez remplacer cet aliment par :</h2>
 
-            {{ product.prod_name }} 
-
-        <h2>Vous pouvez remplacer cet aliment par :</h2>
-
-            <!-- <ul>
-                {% for result in results %}
-                    <li>{{ result.prod_name }} - <a href="{% url 'saving' product=result.prod_id %}">Sauvegarder</a></li>
-                {% endfor %}
-            </ul> -->
-
-            <div class="container">
+            <div class="container mt-5">
 
                 <div class="row">
                     {% for result in results %}
@@ -50,38 +53,6 @@
 
 
     {% endif %}
-
- 
-      <!-- Pagination -->
-      <ul class="pagination justify-content-center">
-        <li class="page-item">
-          <a class="page-link" href="#" aria-label="Previous">
-                <span aria-hidden="true">&laquo;</span>
-                <span class="sr-only">Previous</span>
-              </a>
-        </li>
-        <li class="page-item">
-          <a class="page-link" href="#">1</a>
-        </li>
-        <li class="page-item">
-          <a class="page-link" href="#">2</a>
-        </li>
-        <li class="page-item">
-          <a class="page-link" href="#">3</a>
-        </li>
-        <li class="page-item">
-          <a class="page-link" href="#" aria-label="Next">
-                <span aria-hidden="true">&raquo;</span>
-                <span class="sr-only">Next</span>
-              </a>
-        </li>
-      </ul>
-    
-
-
-
-
-
 
 
 </div>
