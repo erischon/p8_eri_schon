@@ -28,6 +28,10 @@ def search_results(request):
 def search_sub(request):
     return render(request, 'webapp/home.html')
 
+def prodinfos(request, prod_id):
+    product = Product.objects.get(prod_id=prod_id)
+    return render(request, 'search/prodinfos.html', {'product': product})
+
 def saving(request, product):
     ''' I'm saving a Product in the User's Myproduct model. '''
     product = Product.objects.get(prod_id=product)
