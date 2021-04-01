@@ -69,13 +69,14 @@ class Search:
         product_info = {}
         prod_id = result.prod_id
         prod_name = result.prod_name
+        prod_image = result.prod_image
         nutriscore = result.nut_id.nut_type 
         categorie_list = Prodcat.objects.filter(prod_id=result.prod_id)     
         for categorie in categorie_list:
             categorie = categorie.cat_id.cat_name
             self.categories.append(categorie)
 
-        product_info = {'prod_id': prod_id, 'prod_name': prod_name, 'nutriscore': nutriscore, 'categories': self.categories}
+        product_info = {'prod_id': prod_id, 'prod_name': prod_name, 'prod_image': prod_image, 'nutriscore': nutriscore, 'categories': self.categories}
         
         return product_info
 
