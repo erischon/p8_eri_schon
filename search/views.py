@@ -6,6 +6,7 @@ from search.search import Search
 from .forms import SearchForm
 
 def search_results(request):
+    ''' '''
     query = request.GET['q']
     search = Search()
     result_infos = []
@@ -26,11 +27,16 @@ def search_results(request):
         return render(request, 'search/results.html', {'product': product, 'results': result_infos}) 
 
 def search_sub(request):
+    ''' '''
     return render(request, 'webapp/home.html')
 
 def prodinfos(request, prod_id):
-    product = Product.objects.get(prod_id=prod_id)
-    return render(request, 'search/prodinfos.html', {'product': product})
+    ''' I give the Product Informations. '''
+    try:
+        product = Product.objects.get(prod_id=prod_id)
+        return render(request, 'search/prodinfos.html', {'product': product})
+    except:
+        return redirect('home')
 
 def saving(request, product):
     ''' I'm saving a Product in the User's Myproduct model. '''
