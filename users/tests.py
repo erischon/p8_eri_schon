@@ -1,5 +1,8 @@
 from django.test import TestCase
 
+from .views import myproducts_delete, myproducts
+from search.views import saving
+
 class SignupTest(TestCase):
 
     def test_use_signup_template(self):
@@ -27,4 +30,15 @@ class LoginTest(TestCase):
 class LogoutTest(TestCase):
 
     def test_use_logout_template(self):
+        pass
+
+class MyProductTest(TestCase):
+
+    def test_saving_product(self):
+        pass
+
+    def test_display_save(self):
+        pass
+    
+    def test_delete_a_save(self):
         pass
