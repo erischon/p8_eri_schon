@@ -34,7 +34,7 @@
                             </a>
                             <div class="card-body">
                                 <h4 class="card-title">
-                                <a href="#">{{ result.prod_name }}</a>
+                                <a href="{% url 'prodinfos' result.prod_id %}">{{ result.prod_name }}</a>
                                 </h4>
                                 <p><a href="{% url 'saving' product=result.prod_id %}">Sauvegarder</a></p>
                             </div>
