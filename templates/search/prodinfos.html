@@ -12,21 +12,22 @@
     </div>
 </div>
 
-<div class="container pt-5">
+<!-- <div class="container pt-5"> -->
 
-    <div class="container">
-        <div class="row justify-content-center h3">
-            <h2>Nutriscore</h2>
-            <p>{{ product.nutriscore }}</p>
+    
+    <div class="container py-4 my-4">
+        <div class="row justify-content-center">
+            <h2>Nutriscore : <strong>{{ product.nut_id.nut_type }}</strong></h2>
         </div>
-    </div>    
+    </div>
+      
 
     <div class="container">
-        <div class="row justify-content-center h3">
-            <a href="{{ product.prod_url }}" target="_blank">Voir la fiche d'Open Food Facts</a>
+        <div class="row justify-content-center py-4 my-4">
+            <a href="{{ product.prod_url }}" target="_blank" class="h3">Voir la fiche d'Open Food Facts</a>
         </div>
     </div>
 
-</div>
+<!-- </div> -->
 {% endblock %}
 
