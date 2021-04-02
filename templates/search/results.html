@@ -1,5 +1,11 @@
 {% extends 'webapp/base.html' %} {% load static %} {% block content %}
 
+{% if product == "None" %}
+
+<div class="container pt-5 mt5"></div>
+
+{% else %}
+
 <div class="container-fluid bg-product p-5 mt-5 text-center text-white">
     <div class="row"><div class="col pt-4"></div></div>
     <div class="row align-items-center justify-content-center">
@@ -12,12 +18,14 @@
     </div>
 </div>
 
+{% endif %}
 
-<div class="container pt-5 mt-5">
+
+<div class="container pt-5">
 
     {% if product == "None" %}
 
-        <h2>Désolé, nous n'avons pas ce produit dans notre base de données.</h2>
+        <h2 class="my-md-4 py-md-4 text-left">Désolé, nous n'avons pas ce produit dans notre base de données.</h2>
 
     {% else %}
 
@@ -37,7 +45,9 @@
                                 <h4 class="card-title">
                                 <a href="{% url 'prodinfos' result.prod_id %}">{{ result.prod_name }}</a>
                                 </h4>
-                                <p><a href="{% url 'saving' product=result.prod_id %}">Sauvegarder</a></p>
+                                {% if user.is_authenticated %}
+                                <p><i class="fas fa-save mr-2" style="color: #8c6610;"></i><a href="{% url 'saving' product=result.prod_id %}">Sauvegarder</a></p>
+                                {% endif %}
                             </div>
                             <div class="card-badge">{{ result.nutriscore }}</div>
                         </div>
