@@ -7,10 +7,12 @@ body {
     /* background-image: url("../assets/img/bg-purebeurre.jpg"); */
     background-size: cover;
     background-repeat: no-repeat;
-    /* background-color: #C89F25; */
+    /* background-color: #f4623a; */
     opacity: 0.9;
-    background: rgb(140,102,16);
-    background: linear-gradient(147deg, rgba(140,102,16,1) 40%, rgba(200,159,37,1) 100%);
+    /* background: rgb(140,102,16); */
+    /* background: linear-gradient(147deg, rgba(140,102,16,1) 40%, rgba(200,159,37,1) 100%); */
+    background: rgb(244,98,58);
+    background: linear-gradient(0deg, rgba(244,98,58,1) 49%, rgba(222,86,48,1) 77%);
 }
 
 .img-product {
