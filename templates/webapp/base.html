@@ -36,7 +36,7 @@
 
                 <div class="col-lg-3 align-self-start">
                     <a class="navbar-brand js-scroll-trigger" href="{% url 'home' %}">
-                        <img src="{% static 'webapp/assets/img/logo_pur_beurre.png' %}" alt="" class="d-inline-block align-top mr-1" width="30" height="30">
+                        <img src="{% static 'webapp/assets/img/logo_pur_beurre.png' %}" alt="" class="d-inline-block align-top mr-1 text-white" width="30" height="30">
                         Pure Beurre
                     </a>
 
@@ -58,12 +58,12 @@
                         {% if user.is_authenticated %}
                         
                         <ul class="navbar-nav ml-auto my-2 my-lg-0">
-                            <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{% url 'moncompte' %}">Mon Compte</a></li>
-                            <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#">Mes aliments</a></li>
-                            <li class="nav-item">
+                            <li class="nav-item align-self-center"><a class="nav-link js-scroll-trigger" href="{% url 'moncompte' %}">Mon Compte</a></li>
+                            <li class="nav-item align-self-center"><a class="nav-link js-scroll-trigger" href="{% url 'myproducts' %}"><i class="fas fa-carrot" style="font-size: 1.1rem;"></i></a></li>
+                            <li class="nav-item align-self-center">
                                 <form class="nav-link js-scroll-trigger" action="{% url 'logoutuser' %}" method="POST">
                                     {% csrf_token %}
-                                    <button type="submit" class="btn btn-link">Logout</button>
+                                    <button type="submit" class="btn btn-link"><i class="fas fa-sign-out-alt btn-out" style="font-size: 1.2rem; vertical-align: middle;"></i></button>
                                 </form>
                             </li>
                         </ul>
@@ -71,8 +71,8 @@
                         {% else %}
 
                         <ul class="navbar-nav ml-auto my-2 my-lg-0">
-                            <li class="nav-item"><a class="nav-link js-scroll-trigger" id="link_mon_compte" href="{% url 'signupuser' %}">Créer Mon Compte</a></li>
-                            <li class="nav-item"><a class="nav-link js-scroll-trigger" id="link_login" href="{% url 'loginuser' %}">Me connecter</a></li>
+                            <li class="nav-item align-self-center"><a class="nav-link js-scroll-trigger" id="link_mon_compte" href="{% url 'signupuser' %}">Créer Mon Compte</a></li>
+                            <li class="nav-item align-self-center"><a class="nav-link js-scroll-trigger" id="link_login" href="{% url 'loginuser' %}">Me connecter</a></li>
                         </ul>
 
                         {% endif %}
