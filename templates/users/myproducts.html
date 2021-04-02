@@ -1,17 +1,38 @@
 {% extends 'webapp/base.html' %} {% load static %} {% block content %}
 
-<div class="container pt-5 mt-5">
-    
-    <h1>Mes sauvegardes</h1>
+<div class="container-fluid bg-product p-5 mt-5 text-center text-white">
+    <div class="row"><div class="col pt-4"></div></div>
+    <div class="row align-items-center justify-content-center">
+      <div class="col-md-6">
+        <h1 class="display-4 font-weight-bold mb-4">Mes Aliments</h1>
+      </div>
+    </div>
+</div>
 
-    <ul>
+<div class="container mt-5">
+
+    <div class="row">
         {% for product in myproducts %}
 
-            <li>{{ product.prod_name }} - <a href="{% url 'myproducts_delete' product=product.prod_id %}">Effacer</a></li>
-        
-        {% endfor %}
-    </ul>
+        <div class="col-lg-4 col-sm-6 mb-4">
+            <div class="card h-100">
+                <a href="{% url 'prodinfos' product.prod_id %}">
+                    <img class="card-img-top img-product" src="{{ product.prod_image }}" alt="{{ product.prod_name }}">
+                </a>
+                <div class="card-body">
+                    <h4 class="card-title">
+                    <a href="{% url 'prodinfos' product.prod_id %}">{{ product.prod_name }}</a>
+                    </h4>
+                    {% if user.is_authenticated %}
+                    <p><a href="{% url 'myproducts_delete' product=product.prod_id %}" class="text-small">Effacer</a></p>
+                    {% endif %}
+                </div>
+                <div class="card-badge">{{ product.nut_id.nut_type }}</div>
+            </div>
+        </div>
 
+        {% endfor %}
+    </div>
 
 </div>
 {% endblock %}
