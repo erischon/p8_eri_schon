@@ -1,17 +1,15 @@
 {% extends 'webapp/base.html' %} {% load static %} {% block content %}
 
-
-<div class="page-holder bg-cover bg-product pt-5 mt-5">
-  <header class="text-center text-white py-5">
-    <div class="row">
-      <div class="col-6">
+<div class="container-fluid bg-product p-5 mt-5 text-center text-white">
+    <div class="row"><div class="col pt-4"></div></div>
+    <div class="row align-items-center justify-content-center">
+      <div class="col-md-4">
         <h1 class="display-4 font-weight-bold mb-4">{{ product.prod_name }}</h1>
       </div>
-      <div class="col-4 mr-4">
-        <img class="img-fuild img-product-top" src="{{ product.prod_image }}" alt="">
+      <div class="col-md-2">
+        <img class="img-fuild img-product-top border border-dark rounded" src="{{ product.prod_image }}" alt="">
       </div>
     </div>
-  </header>
 </div>
 
 
@@ -30,7 +28,7 @@
                 <div class="row">
                     {% for result in results %}
 
-                    <div class="col-lg-3 col-sm-6 mb-4">
+                    <div class="col-lg-4 col-sm-6 mb-4">
                         <div class="card h-100">
                             <a href="#">
                                 <img class="card-img-top img-product" src="{{ result.prod_image }}" alt="{{ result.prod_name }}">
