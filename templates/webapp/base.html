@@ -37,7 +37,7 @@
                 <div class="col-lg-3 align-self-start">
                     <a class="navbar-brand js-scroll-trigger" href="{% url 'home' %}">
                         <img src="{% static 'webapp/assets/img/logo_pur_beurre.png' %}" alt="" class="d-inline-block align-top mr-1 text-white" width="30" height="30">
-                        Pure Beurre
+                        Pur Beurre
                     </a>
 
                     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
@@ -92,8 +92,8 @@
         <footer class="bg-dark py-5 mt-5" id="footer">
             <div class="container">
                 <div class="row">
-                    <div class="col small text-center" id="link_mentions_legales"><a href="#" class="text-white">Mentions légales</a></div>
-                    <div class="col small text-center" id="link_contact"><a href="#" class="text-white">Contact</a></div>
+                    <div class="col small text-center" id="link_mentions_legales"><a href="{% url 'mentions' %}" class="text-white">Mentions légales</a></div>
+                    <div class="col small text-center" id="link_contact"><a href="{% url 'home' %}#contact" class="text-white">Contact</a></div>
                 </div>
             </div>
         </footer>
