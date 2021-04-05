@@ -46,7 +46,7 @@
                                 <a href="{% url 'prodinfos' result.prod_id %}">{{ result.prod_name }}</a>
                                 </h4>
                                 {% if user.is_authenticated %}
-                                <p><i class="fas fa-save mr-2" style="color: #8c6610;"></i><a href="{% url 'saving' product=result.prod_id %}">Sauvegarder</a></p>
+                                    <p><i class="fas fa-save mr-2" style="color: #8c6610;"></i><a href="{% url 'saving' product=result.prod_id %}">Sauvegarder</a></p>
                                 {% endif %}
                             </div>
                             <div class="card-badge">{{ result.nutriscore }}</div>
