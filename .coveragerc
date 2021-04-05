@@ -5,4 +5,5 @@ omit=
     manage.py
     */tests/*
     */thesubstitute/*
-    */_test.py
+    */_tests.py
+    */apps.py
