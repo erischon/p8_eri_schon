@@ -1,12 +1,15 @@
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
+from django.contrib.admin.views.decorators import staff_member_required
 
 from database.extract import Extract
 from database.transform import Transform
 from database.load import Load
 from database.manage import DBManage
 
-@login_required
+
+@login_required(login_url='/users/login/')
+@staff_member_required(login_url='/users/login/')
 def etl(request):
     return render(request, 'database/etl.html')
 
