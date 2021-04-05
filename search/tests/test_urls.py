@@ -3,7 +3,7 @@ from django.urls import reverse, resolve
 
 from search.views import search_sub, search_results, prodinfos, saving
 
-class DatabaseTestUrls(SimpleTestCase):
+class SearchTestUrls(SimpleTestCase):
 
     def test_search_sub_url_is_resolved(self):
         url = reverse('search_sub')
