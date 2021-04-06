@@ -31,6 +31,7 @@ def etl_load(request):
     message = loading.load_data()
     return render(request, 'database/etl.html', {'message_load': message})
 
+@login_required
 def etl_manage_nutriscore(request):
     managing = DBManage()
     message = managing.load_nutriscore()
