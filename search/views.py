@@ -6,7 +6,7 @@ from search.search import Search
 from .forms import SearchForm
 
 def search_results(request):
-    ''' '''
+    ''' I search for substitute to the product requested. '''
     query = request.GET['q']
     search = Search()
     result_infos = []
@@ -27,7 +27,7 @@ def search_results(request):
         return render(request, 'search/results.html', {'product': product, 'results': result_infos}) 
 
 def search_sub(request):
-    ''' '''
+    ''' I don't know why I'm here... '''
     return render(request, 'webapp/home.html')
 
 def prodinfos(request, prod_id):
