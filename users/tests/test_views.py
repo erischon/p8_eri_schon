@@ -1,9 +1,8 @@
 from django.test import TestCase, Client, RequestFactory
 from django.urls import reverse, resolve
-from django.contrib.auth.models import User
+from django.contrib.auth.models import User, AnonymousUser
 
 from database.models import Product, Nutriscore
-from search.views import saving, search_results
 
 class UsersTestViews(TestCase):
 
@@ -11,34 +10,42 @@ class UsersTestViews(TestCase):
         self.client = Client()
         self.factory = RequestFactory()
 
-        nutriscore = Nutriscore.objects.create(nut_id=1, nut_type="C")
-        self.product = Product.objects.create(
-            prod_id = 3017620422003,
-            prod_name = "test product",
-            nut_id = nutriscore,
-        )
         self.user = User.objects.create_user(
             username = "my username",
             password = "my pasword"
         )
 
-        self.search_result_url = reverse('search_results')
-        self.prodinfos_url = reverse('prodinfos', args=[self.product.prod_id])
-        self.search_sub_url = reverse('search_sub')
-        self.saving_url = reverse('saving', args=[self.product.prod_id])
+        self.signupuser_url = reverse('signupuser')
+        self.moncompte_url = reverse('moncompte')
 
 
     def test_signupuser_view(self):
-        response = self.client.get(self.prodinfos_url)
+        response = self.client.get(self.signupuser_url)
 
         self.assertEquals(response.status_code, 200)
-        self.assertTemplateUsed(response, 'search/prodinfos.html')
+        self.assertTemplateUsed(response, 'users/signup.html')
 
     def test_loginuser_view(self):
-        pass
+        response = self.client.post('/users/login/', {'username': 'my username', 'password': 'my password'} )
+
+        self.assertEquals(response.status_code, 200)
+
+    def test_loginuser_view_user_is_none(self):
+        response = self.client.post('/users/login/', {'username': 'none', 'password': 'none'} )
+
+        self.assertEquals(response.status_code, 200)
+        self.assertTemplateUsed(response, 'users/login.html')
+
+    def test_logoutuser_view(self):
+        response = self.client.post('/users/logout/')
+
+        self.assertEquals(response.status_code, 302)
 
     def test_moncompte_view(self):
-        pass
+        response = self.client.get(self.moncompte_url)
+
+        self.assertEquals(response.status_code, 200)
+        self.assertTemplateUsed(response, 'users/moncompte.html')
 
     def test_myproducts_view(self):
         pass
