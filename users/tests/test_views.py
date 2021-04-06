@@ -53,13 +53,6 @@ class UsersTestViews(TestCase):
         response = self.client.post('/users/signup/', {'password1': 'pass1', 'password2': 'pass1', 'username': 'testuser2'})
 
         self.assertEquals(response.status_code, 302)
-        # self.assertTemplateUsed(response, 'users/signup.html')
-
-        # request = self.factory.post('/users/signup/', {'password1': 'pass1', 'password2': 'pass1', 'username': 'testuser2'})
-
-        # response = signupuser(request)
-
-        # self.assertEquals(response.status_code, 200)
 
 
     ### Method loginuser ###
