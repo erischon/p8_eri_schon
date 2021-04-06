@@ -3,10 +3,10 @@ from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth.models import User
 from django.contrib.auth import login, logout, authenticate
 from django.db import IntegrityError
-# from database.models import Myproduct
 from database.models import Product
 
 def signupuser(request):
+    ''' '''
     if request.method == 'POST':
         if request.POST['password1'] == request.POST['password2']:
             try:
@@ -22,6 +22,7 @@ def signupuser(request):
         return render(request, 'users/signup.html', {'form':UserCreationForm()})
 
 def loginuser(request):
+    ''' '''
     if request.method == 'POST':
         user = authenticate(request, username=request.POST['username'], password=request.POST['password'])
         if user is None:
@@ -33,18 +34,22 @@ def loginuser(request):
         return render(request, 'users/login.html', {'form':AuthenticationForm()})
 
 def logoutuser(request):
+    ''' '''
     if request.method == 'POST':
         logout(request)
         return redirect('home')
 
 def moncompte(request):
+    ''' '''
     return render(request, 'users/moncompte.html')
 
 def myproducts(request):
+    ''' '''
     myproducts = Product.objects.filter(myproduct=request.user)
     return render(request, 'users/myproducts.html', {'myproducts': myproducts})
 
 def myproducts_delete(request, product):
+    ''' '''
     myproduct = Product.objects.get(prod_id=product)
     myproduct.myproduct.clear()
     return redirect('myproducts')
