@@ -1,49 +1,55 @@
-from django.test import TestCase, Client
+from django.test import TestCase, Client, RequestFactory
 from django.urls import reverse, resolve
+from django.contrib.auth.models import User
 
-from database.models import Product, Nutriscore, User
+from database.models import Product, Nutriscore
+from search.views import saving, search_results
 
 class SearchTestViews(TestCase):
 
     def setUp(self):
         self.client = Client()
+        self.factory = RequestFactory()
 
         nutriscore = Nutriscore.objects.create(nut_id=1, nut_type="C")
         self.product = Product.objects.create(
-            prod_id = 15,
+            prod_id = 3017620422003,
             prod_name = "test product",
             nut_id = nutriscore,
         )
+        self.user = User.objects.create_user(
+            username = "my username",
+            password = "my pasword"
+        )
 
+        self.search_result_url = reverse('search_results')
         self.prodinfos_url = reverse('prodinfos', args=[self.product.prod_id])
         self.search_sub_url = reverse('search_sub')
-        # self.saving_url = reverse('saving', args=['8001505005592'])
+        self.saving_url = reverse('saving', args=[self.product.prod_id])
 
-    # def test_search_results(self):
-    #     client = Client()
+    def test_search_results(self):
+        request = self.factory.get('?q=3017620422003')
 
-    #     response = client.get(reverse('search_results'))
+        response = search_results(request)
 
-    #     self.assertEquals(response.status_code, 200)
-    #     self.assertTemplateUsed(response, 'search/results.html')
+        self.assertEquals(response.status_code, 200)
 
-    def test_prodinfos(self):
-
+    def test_prodinfos_view(self):
         response = self.client.get(self.prodinfos_url)
 
         self.assertEquals(response.status_code, 200)
         self.assertTemplateUsed(response, 'search/prodinfos.html')
 
-    def test_search_sub(self):
-
+    def test_search_sub_view(self):
         response = self.client.get(self.search_sub_url)
 
         self.assertEquals(response.status_code, 200)
         self.assertTemplateUsed(response, 'webapp/home.html')
 
-    # def test_saving(self):
+    def test_saving_view(self):
+        request = self.factory.get('/search/result/')
+        request.user = self.user
 
-    #     response = self.client.get(self.saving_url)
+        response = saving(request, self.product.prod_id)
 
-    #     self.assertEquals(response.status_code, 200)
-    #     self.assertTemplateUsed(response, 'users/myproducts.html')
+        self.assertEquals(response.status_code, 302)
