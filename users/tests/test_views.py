@@ -3,6 +3,7 @@ from django.urls import reverse, resolve
 from django.contrib.auth.models import User, AnonymousUser
 
 from database.models import Product, Nutriscore
+from users.views import signupuser, myproducts_delete
 
 class UsersTestViews(TestCase):
 
@@ -13,24 +14,57 @@ class UsersTestViews(TestCase):
         self.credentials = {
             'username': 'testuser',
             'password': 'secret'}
-        self.user = User.objects.create_user(**self.credentials)
+        User.objects.create_user(**self.credentials)
+        self.user = User.objects.get(username='testuser')
+
+        nutriscore = Nutriscore.objects.create(nut_id=1, nut_type="C")
+        self.product = Product.objects.create(
+            prod_id = 3017620422003,
+            prod_name = "test product",
+            nut_id = nutriscore,
+        )
+        self.product.myproduct.add(self.user)
 
         self.signupuser_url = reverse('signupuser')
         self.moncompte_url = reverse('moncompte')
         self.myproducts_url = reverse('myproducts')
-        self.myproducts_delete_url = reverse('myproducts_delete', args=['1'])
 
 
+    ### Method signupuser ###
     def test_signupuser_view(self):
         response = self.client.get(self.signupuser_url)
 
         self.assertEquals(response.status_code, 200)
         self.assertTemplateUsed(response, 'users/signup.html')
 
+    def test_signupuser_view_post_method_no_same_kw(self):
+        response = self.client.post('/users/signup/', {'password1': 'pass1', 'password2': 'pass2'})
+
+        self.assertEquals(response.status_code, 200)
+        self.assertTemplateUsed(response, 'users/signup.html')
+
+    def test_signupuser_view_post_method_except(self):
+        response = self.client.post('/users/signup/', {'password1': 'pass1', 'password2': 'pass1', 'username': 'testuser'})
+
+        self.assertEquals(response.status_code, 200)
+        self.assertTemplateUsed(response, 'users/signup.html')
+
+    def test_signupuser_view_post_method_with_connect(self):
+        response = self.client.post('/users/signup/', {'password1': 'pass1', 'password2': 'pass1', 'username': 'testuser2'})
+
+        self.assertEquals(response.status_code, 302)
+        # self.assertTemplateUsed(response, 'users/signup.html')
+
+        # request = self.factory.post('/users/signup/', {'password1': 'pass1', 'password2': 'pass1', 'username': 'testuser2'})
+
+        # response = signupuser(request)
+
+        # self.assertEquals(response.status_code, 200)
+
 
     ### Method loginuser ###
     def test_loginuser_view(self):
-        response = self.client.post('/users/login/', self.credentials, follow= True )
+        response = self.client.post('/users/login/', self.credentials, follow= True)
 
         self.assertTrue(response.context['user'].is_active)
         self.assertEquals(response.status_code, 200)
@@ -62,18 +96,16 @@ class UsersTestViews(TestCase):
 
 
     def test_myproducts_view(self):
-        self.client.login(username='testuser', password='secret')
+        self.client.login(**self.credentials)
         response = self.client.get(self.myproducts_url)
 
         self.assertEquals(response.status_code, 200)
         self.assertTemplateUsed(response, 'users/myproducts.html')
 
     def test_myproducts_delete_view(self):
-        # self.client.login(username='testuser', password='secret')
-        # response = self.client.get(self.myproducts_delete_url)
+        self.client.login(**self.credentials)
+        request = self.factory.get('/search/result/')
 
-        # self.assertEquals(response.status_code, 200)
-        # self.assertTemplateUsed(response, 'users/myproducts.html')
+        response = myproducts_delete(request, self.product.prod_id)
 
-        # Utiliser un mock ??
-        pass
+        self.assertEquals(response.status_code, 302)
