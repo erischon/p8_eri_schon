@@ -7,3 +7,10 @@ omit=
     */thesubstitute/*
     */_tests.py
     */apps.py
+
+
+    */search.py
+    */extract.py
+    */transform.py
+    */load.py
+    */database/views.py
