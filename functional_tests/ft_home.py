@@ -30,7 +30,7 @@ class NewVisitorTest(unittest.TestCase):
         logo = navbar.find_element_by_tag_name('img')
         self.assertIn('logo_pur_beurre.png', logo.get_attribute('src'))
         brand = navbar.find_element_by_class_name('navbar-brand').text
-        self.assertIn('Pure Beurre', brand)
+        self.assertIn('Pur Beurre', brand)
 
             # Au milieu elle voit un formulaire de recherche.
         form = navbar.find_element_by_id('product_search_form')
