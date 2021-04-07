@@ -59,8 +59,6 @@ class NewVisitorTest(unittest.TestCase):
         self.assertIn('Mentions légales', footer.find_element_by_id('link_mentions_legales').text)
         self.assertIn('Contact', footer.find_element_by_id('link_contact').text)
 
-        # Elle se dit que cela fait sérieux et elle se lance en entrant "Nutella" dans le champs de recherche. Elle clic sur le bouton "Chercher" et cela lui ouvre une nouvelle page.
-        # self.fail('Finish the test!')
 
 
 if __name__ == '__main__':
