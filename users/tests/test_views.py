@@ -13,6 +13,7 @@ class UsersTestViews(TestCase):
 
         self.credentials = {
             'username': 'testuser',
+            'email': 'testemail',
             'password': 'secret'}
         User.objects.create_user(**self.credentials)
         self.user = User.objects.get(username='testuser')
@@ -44,13 +45,13 @@ class UsersTestViews(TestCase):
         self.assertTemplateUsed(response, 'users/signup.html')
 
     def test_signupuser_view_post_method_except(self):
-        response = self.client.post('/users/signup/', {'password1': 'pass1', 'password2': 'pass1', 'username': 'testuser'})
+        response = self.client.post('/users/signup/', {'password1': 'pass1', 'password2': 'pass1', 'username': 'testuser', 'email': 'testemail'})
 
         self.assertEquals(response.status_code, 200)
         self.assertTemplateUsed(response, 'users/signup.html')
 
     def test_signupuser_view_post_method_with_connect(self):
-        response = self.client.post('/users/signup/', {'password1': 'pass1', 'password2': 'pass1', 'username': 'testuser2'})
+        response = self.client.post('/users/signup/', {'password1': 'pass1', 'password2': 'pass1', 'username': 'testuser2', 'email': 'testemail'})
 
         self.assertEquals(response.status_code, 302)
 
