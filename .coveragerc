@@ -8,7 +8,6 @@ omit=
     */_tests.py
     */apps.py
 
-
     */search.py
     */extract.py
     */transform.py
