@@ -8,7 +8,7 @@ body {
     background-repeat: no-repeat;
     opacity: 0.9;
     background: rgb(244,98,58);
-    background: linear-gradient(0deg, rgba(244,98,58,1) 49%, rgba(222,86,48,1) 77%);
+    background: linear-gradient(to bottom, rgba(182, 110, 6, 0.7) 0%, rgba(182, 110, 6, 0.7) 100%);
 }
 
 .img-product {
@@ -55,7 +55,8 @@ body {
   }
 
   .bg-user {
-    background: linear-gradient(to bottom, rgba(92, 77, 66, 0.7) 0%, rgba(92, 77, 66, 0.7) 100%), url("../assets/img/bg-purebeurre.jpg");
+    background: linear-gradient(to bottom, rgba(92, 77, 66, 0.7) 0%, rgba(92, 77, 66, 0.7) 100%);
+    /* background: linear-gradient(to bottom, rgba(92, 77, 66, 0.7) 0%, rgba(92, 77, 66, 0.7) 100%), url("../assets/img/bg-purebeurre.jpg"); */
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 25% 25%;
