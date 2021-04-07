@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.contrib.auth import login, logout, authenticate
 from django.db import IntegrityError
@@ -33,6 +34,7 @@ def loginuser(request):
     else:
         return render(request, 'users/login.html', {'form':AuthenticationForm()})
 
+@login_required
 def logoutuser(request):
     ''' '''
     if request.method == 'POST':
