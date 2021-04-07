@@ -1,7 +1,7 @@
 from selenium import webdriver
 import unittest
 
-class NewUser(unittest.TestCase):
+class NewSearch(unittest.TestCase):
 
     def setUp(self):
         self.browser = webdriver.Firefox()
