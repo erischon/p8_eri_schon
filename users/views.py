@@ -43,15 +43,18 @@ def logoutuser(request):
         logout(request)
         return redirect('home')
 
+@login_required
 def moncompte(request):
     ''' '''
     return render(request, 'users/moncompte.html')
 
+@login_required
 def myproducts(request):
     ''' '''
     myproducts = Product.objects.filter(myproduct=request.user)
     return render(request, 'users/myproducts.html', {'myproducts': myproducts})
 
+@login_required
 def myproducts_delete(request, product):
     ''' '''
     myproduct = Product.objects.get(prod_id=product)
