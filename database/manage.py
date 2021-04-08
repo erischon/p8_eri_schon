@@ -1,5 +1,11 @@
+<<<<<<< Updated upstream
 from django.db import connection
 from database.models import Product, Nutriscore, Categorie, Prodcat, Brand, Prodbrand, Shop, Prodshop
+=======
+from django.db import connection, models
+from database.models import Product, Categorie, Prodcat, Brand, Prodbrand, Shop, Prodshop
+
+>>>>>>> Stashed changes
 
 class DBManage:
 
