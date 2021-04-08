@@ -9,7 +9,7 @@ class Command(BaseCommand):
 
     def handle(self, *args, **kwargs):
         managing = DBManage()
-        managing.delete_tables()
+        # managing.delete_tables()
         extract = Extract()
         extract.extract()
         transform = Transform()
