@@ -1,7 +1,7 @@
 import json
 from itertools import chain
 
-from django.db import connection, models
+from django.db import connection
 from database.models import Product, Nutriscore, Categorie, Prodcat, Brand, Prodbrand, Shop, Prodshop
 
 
