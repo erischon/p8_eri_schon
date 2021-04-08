@@ -19,3 +19,5 @@ class DatabaseTestClass(TestCase):
         response = self.extract.extract()
 
         self.assertEqual(response, 'ECHEC : les produits ne sont pas téléchargés.')
+
+    
