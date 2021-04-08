@@ -29,6 +29,7 @@ class UsersTestViews(TestCase):
         self.signupuser_url = reverse('signupuser')
         self.moncompte_url = reverse('moncompte')
         self.myproducts_url = reverse('myproducts')
+        self.myproducts_delete_url = reverse('myproducts_delete', args=[self.product.prod_id])
 
 
     ### Method signupuser ###
@@ -83,6 +84,7 @@ class UsersTestViews(TestCase):
 
 
     def test_moncompte_view(self):
+        self.client.login(**self.credentials)
         response = self.client.get(self.moncompte_url)
 
         self.assertEquals(response.status_code, 200)
@@ -98,8 +100,6 @@ class UsersTestViews(TestCase):
 
     def test_myproducts_delete_view(self):
         self.client.login(**self.credentials)
-        request = self.factory.get('/search/result/')
-
-        response = myproducts_delete(request, self.product.prod_id)
+        response = self.client.get(self.myproducts_delete_url)
 
         self.assertEquals(response.status_code, 302)
