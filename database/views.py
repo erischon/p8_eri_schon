@@ -11,11 +11,13 @@ from database.manage import DBManage
 def etl(request):
     return render(request, 'database/etl.html')
 
+
 @staff_member_required(login_url='/users/login/')
 def etl_extract(request):
     extract = Extract()
     message = extract.extract()
     return render(request, 'database/etl.html', {'message_extract': message})
+
 
 @staff_member_required(login_url='/users/login/')
 def etl_transform(request):
@@ -23,17 +25,20 @@ def etl_transform(request):
     message = transform.transform_basic()
     return render(request, 'database/etl.html', {'message_transform': message})
 
+
 @staff_member_required(login_url='/users/login/')
 def etl_load(request):
     loading = Load()
     message = loading.load_data()
     return render(request, 'database/etl.html', {'message_load': message})
 
+
 @staff_member_required(login_url='/users/login/')
 def etl_manage_nutriscore(request):
     managing = DBManage()
     message = managing.load_nutriscore()
     return render(request, 'database/etl.html', {'message_manage_nutriscore': message})
+
 
 @staff_member_required(login_url='/users/login/')
 def etl_manage_delete(request):

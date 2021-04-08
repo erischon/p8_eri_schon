@@ -1,5 +1,4 @@
 import json
-from itertools import chain
 
 from django.db import connection
 from database.models import Product, Nutriscore, Categorie, Prodcat, Brand, Prodbrand, Shop, Prodshop
@@ -24,8 +23,10 @@ class Load:
 
             # Insert Product
             if Product.objects.filter(pk=prod_key).exists() is False:
-                nut_id = Nutriscore.objects.get(nut_type=prod_to_load["nutriscore_grade"][0].upper())
-                query = Product(prod_id=prod_key, prod_name=prod_to_load['product_name_fr'], prod_url=prod_to_load['url'], prod_image=prod_to_load['image_small_url'], nut_id=nut_id)
+                nut_id = Nutriscore.objects.get(
+                    nut_type=prod_to_load["nutriscore_grade"][0].upper())
+                query = Product(prod_id=prod_key, prod_name=prod_to_load['product_name_fr'],
+                                prod_url=prod_to_load['url'], prod_image=prod_to_load['image_small_url'], nut_id=nut_id)
                 query.save()
             else:
                 pass
@@ -40,7 +41,8 @@ class Load:
                     query.save()
 
                 # In prodcat table
-                cat_object = Categorie.objects.get(cat_name=prod_to_load["categories"][n])
+                cat_object = Categorie.objects.get(
+                    cat_name=prod_to_load["categories"][n])
                 cat_id = cat_object.cat_id
                 if Prodcat.objects.filter(cat_id=cat_id, prod_id=prod_key).exists() is False:
                     query = Prodcat(cat_id=cat_object, prod_id=prod_object)
@@ -54,10 +56,12 @@ class Load:
                     query.save()
 
                 # In prodbrand table
-                brand_object = Brand.objects.get(brand_name=prod_to_load["brands"][n])
+                brand_object = Brand.objects.get(
+                    brand_name=prod_to_load["brands"][n])
                 brand_id = brand_object.brand_id
                 if Prodbrand.objects.filter(brand_id=brand_id, prod_id=prod_key).exists() is False:
-                    query = Prodbrand(brand_id=brand_object, prod_id=prod_object)
+                    query = Prodbrand(brand_id=brand_object,
+                                      prod_id=prod_object)
                     query.save()
 
             # Insert Shop
@@ -68,7 +72,8 @@ class Load:
                     query.save()
 
                 # In prodshop table
-                shop_object = Shop.objects.get(shop_name=prod_to_load["stores"][n])
+                shop_object = Shop.objects.get(
+                    shop_name=prod_to_load["stores"][n])
                 shop_id = shop_object.shop_id
                 if Prodshop.objects.filter(shop_id=shop_id, prod_id=prod_key).exists() is False:
                     query = Prodshop(shop_id=shop_object, prod_id=prod_object)

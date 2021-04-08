@@ -5,6 +5,7 @@ from database.extract import Extract
 from database.transform import Transform
 from database.load import Load
 
+
 class Command(BaseCommand):
 
     def handle(self, *args, **kwargs):

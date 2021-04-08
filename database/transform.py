@@ -34,12 +34,14 @@ class Transform:
                 try:
                     if field != self.fields[1]:
                         self.data_clean[
-                            self.data_extract["products"][n][self.fields[1]].lower()
+                            self.data_extract["products"][n][self.fields[1]].lower(
+                            )
                         ][field] = self.data_extract["products"][n][field].lower()
                 except KeyError:
                     self.data_clean[
-                            self.data_extract["products"][n][self.fields[1]].lower()
-                        ][field] = 'X'
+                        self.data_extract["products"][n][self.fields[1]].lower(
+                        )
+                    ][field] = 'X'
 
         self.transform_field(self.data_clean)
 
