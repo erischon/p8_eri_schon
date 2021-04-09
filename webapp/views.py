@@ -10,4 +10,4 @@ def mentions(request):
 
 
 def error_404(request, exception):
-    return render(request, 'webapp/404.html')
+    return render(request, 'webapp/404.html', {'exception': exception})
