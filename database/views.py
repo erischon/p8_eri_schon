@@ -4,7 +4,7 @@ from django.contrib.admin.views.decorators import staff_member_required
 from database.extract import Extract
 from database.transform import Transform
 from database.load import Load
-from database.manage import DBManage
+from database.utils import DBManage
 
 
 @staff_member_required(login_url='/users/login/')

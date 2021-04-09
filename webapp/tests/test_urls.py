@@ -3,6 +3,7 @@ from django.urls import reverse, resolve
 
 from webapp.views import home_page, mentions
 
+
 class WebappTestUrls(SimpleTestCase):
 
     def test_home_url_is_resolved(self):

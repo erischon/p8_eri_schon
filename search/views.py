@@ -1,9 +1,8 @@
 from django.shortcuts import render, redirect
-from django.http import HttpResponseRedirect
 
-from database.models import Product, Prodcat, Categorie, User
+from database.models import Product
 from search.search import Search
-from .forms import SearchForm
+
 
 def search_results(request):
     ''' I search for substitute to the product requested. '''
@@ -21,22 +20,26 @@ def search_results(request):
         for categorie in product['categories']:
             result_info = search.find_substitute(search_product)
             result_infos.extend(search.result_infos(result_info))
-        
-        result_infos = [i for n, i in enumerate(result_infos) if i not in result_infos[n + 1:]]
 
-        return render(request, 'search/results.html', {'product': product, 'results': result_infos}) 
+        result_infos = [i for n, i in enumerate(
+            result_infos) if i not in result_infos[n + 1:]]
+
+        return render(request, 'search/results.html', {'product': product, 'results': result_infos})
+
 
 def search_sub(request):
     ''' I don't know why I'm here... '''
     return render(request, 'webapp/home.html')
+
 
 def prodinfos(request, prod_id):
     ''' I give the Product Informations. '''
     try:
         product = Product.objects.get(prod_id=prod_id)
         return render(request, 'search/prodinfos.html', {'product': product})
-    except:
-        return redirect('home')
+    except Exception as error:
+        return redirect('home', {'error': error})
+
 
 def saving(request, product):
     ''' I'm saving a Product in the User's Myproduct model. '''

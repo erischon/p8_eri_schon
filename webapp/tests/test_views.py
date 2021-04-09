@@ -1,5 +1,6 @@
 from django.test import TestCase, Client
-from django.urls import reverse, resolve
+from django.urls import reverse
+
 
 class WebAppTestViews(TestCase):
 
@@ -8,7 +9,6 @@ class WebAppTestViews(TestCase):
 
         self.homepage_url = reverse('home')
         self.mentions_url = reverse('mentions')
-
 
     def test_homepage_view(self):
         response = self.client.get(self.homepage_url)

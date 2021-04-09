@@ -1,9 +1,9 @@
 from django.test import TestCase, Client, RequestFactory
-from django.urls import reverse, resolve
-from django.contrib.auth.models import User, AnonymousUser
+from django.urls import reverse
+from django.contrib.auth.models import User
 
 from database.models import Product, Nutriscore
-from users.views import signupuser, myproducts_delete
+
 
 class UsersTestViews(TestCase):
 
@@ -20,9 +20,9 @@ class UsersTestViews(TestCase):
 
         nutriscore = Nutriscore.objects.create(nut_id=1, nut_type="C")
         self.product = Product.objects.create(
-            prod_id = 3017620422003,
-            prod_name = "test product",
-            nut_id = nutriscore,
+            prod_id=3017620422003,
+            prod_name="test product",
+            nut_id=nutriscore,
         )
         self.product.myproduct.add(self.user)
 
@@ -30,10 +30,11 @@ class UsersTestViews(TestCase):
         self.logoutuser_url = reverse('logoutuser')
         self.moncompte_url = reverse('moncompte')
         self.myproducts_url = reverse('myproducts')
-        self.myproducts_delete_url = reverse('myproducts_delete', args=[self.product.prod_id])
+        self.myproducts_delete_url = reverse(
+            'myproducts_delete', args=[self.product.prod_id])
 
+    # === Method signupuser ===
 
-    ### Method signupuser ###
     def test_signupuser_view(self):
         response = self.client.get(self.signupuser_url)
 
@@ -41,32 +42,37 @@ class UsersTestViews(TestCase):
         self.assertTemplateUsed(response, 'users/signup.html')
 
     def test_signupuser_view_post_method_no_same_kw(self):
-        response = self.client.post('/users/signup/', {'password1': 'pass1', 'password2': 'pass2'})
+        response = self.client.post(
+            '/users/signup/', {'password1': 'pass1', 'password2': 'pass2'})
 
         self.assertEquals(response.status_code, 200)
         self.assertTemplateUsed(response, 'users/signup.html')
 
     def test_signupuser_view_post_method_except(self):
-        response = self.client.post('/users/signup/', {'password1': 'pass1', 'password2': 'pass1', 'username': 'testuser', 'email': 'testemail'})
+        response = self.client.post(
+            '/users/signup/', {'password1': 'pass1', 'password2': 'pass1', 'username': 'testuser', 'email': 'testemail'})
 
         self.assertEquals(response.status_code, 200)
         self.assertTemplateUsed(response, 'users/signup.html')
 
     def test_signupuser_view_post_method_with_connect(self):
-        response = self.client.post('/users/signup/', {'password1': 'pass1', 'password2': 'pass1', 'username': 'testuser2', 'email': 'testemail'})
+        response = self.client.post(
+            '/users/signup/', {'password1': 'pass1', 'password2': 'pass1', 'username': 'testuser2', 'email': 'testemail'})
 
         self.assertEquals(response.status_code, 302)
 
+    # === Method loginuser ===
 
-    ### Method loginuser ###
     def test_loginuser_view(self):
-        response = self.client.post('/users/login/', self.credentials, follow= True)
+        response = self.client.post(
+            '/users/login/', self.credentials, follow=True)
 
         self.assertTrue(response.context['user'].is_active)
         self.assertEquals(response.status_code, 200)
 
     def test_loginuser_view_user_is_none(self):
-        response = self.client.post('/users/login/', {'username': 'none', 'password': 'none'} )
+        response = self.client.post(
+            '/users/login/', {'username': 'none', 'password': 'none'})
 
         self.assertEquals(response.status_code, 200)
         self.assertTemplateUsed(response, 'users/login.html')
@@ -77,13 +83,11 @@ class UsersTestViews(TestCase):
         self.assertEquals(response.status_code, 200)
         self.assertTemplateUsed(response, 'users/login.html')
 
-
     def test_logoutuser_view(self):
         self.client.login(**self.credentials)
         response = self.client.post(self.logoutuser_url)
 
         self.assertRedirects(response, reverse('home'))
-
 
     def test_moncompte_view(self):
         self.client.login(**self.credentials)
@@ -91,7 +95,6 @@ class UsersTestViews(TestCase):
 
         self.assertEquals(response.status_code, 200)
         self.assertTemplateUsed(response, 'users/moncompte.html')
-
 
     def test_myproducts_view(self):
         self.client.login(**self.credentials)

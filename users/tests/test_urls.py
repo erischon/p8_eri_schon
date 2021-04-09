@@ -3,6 +3,7 @@ from django.urls import reverse, resolve
 
 from users.views import signupuser, moncompte, loginuser, logoutuser, myproducts, myproducts_delete
 
+
 class UsersTestUrls(SimpleTestCase):
 
     def test_signup_url_is_resolved(self):

@@ -1,5 +1,5 @@
-from database.models import Product, Prodcat, Categorie, Nutriscore
-from django.db.models import F
+from database.models import Product, Prodcat, Nutriscore
+
 
 class Search:
 
@@ -25,7 +25,7 @@ class Search:
             # I take the first result
             result = result[0]
             return result
-    
+
     def find_substitute(self, product):
         """ I'm the algorithm.
         In : an object product
@@ -36,7 +36,8 @@ class Search:
         categorie = Prodcat.objects.filter(prod_id=product.prod_id)[0]
 
         # product_list = Product.objects.filter(prodcat__cat_id=categorie.cat_id).filter(nut_id__lte=(nutriscore-1)).order_by('nut_id', 'prod_name')
-        product_list = Product.objects.filter(prodcat__cat_id=categorie.cat_id).filter(nut_id__lte=(nutriscore-1)).order_by('nut_id', 'prod_name').values_list()[:10]
+        product_list = Product.objects.filter(prodcat__cat_id=categorie.cat_id).filter(
+            nut_id__lte=(nutriscore-1)).order_by('nut_id', 'prod_name').values_list()[:10]
 
         return product_list
 
@@ -55,7 +56,8 @@ class Search:
             prod_image = product[3]
             nutriscore = Nutriscore.objects.get(nut_id=product[4]).nut_type
 
-            result_info.append({'prod_id': prod_id, 'prod_name': prod_name, 'prod_url': prod_url, 'prod_image': prod_image, 'nutriscore': nutriscore})
+            result_info.append({'prod_id': prod_id, 'prod_name': prod_name,
+                               'prod_url': prod_url, 'prod_image': prod_image, 'nutriscore': nutriscore})
 
         return result_info
 
@@ -70,14 +72,15 @@ class Search:
         prod_id = result.prod_id
         prod_name = result.prod_name
         prod_image = result.prod_image
-        nutriscore = result.nut_id.nut_type 
-        categorie_list = Prodcat.objects.filter(prod_id=result.prod_id)     
+        nutriscore = result.nut_id.nut_type
+        categorie_list = Prodcat.objects.filter(prod_id=result.prod_id)
         for categorie in categorie_list:
             categorie = categorie.cat_id.cat_name
             self.categories.append(categorie)
 
-        product_info = {'prod_id': prod_id, 'prod_name': prod_name, 'prod_image': prod_image, 'nutriscore': nutriscore, 'categories': self.categories}
-        
+        product_info = {'prod_id': prod_id, 'prod_name': prod_name,
+                        'prod_image': prod_image, 'nutriscore': nutriscore, 'categories': self.categories}
+
         return product_info
 
 

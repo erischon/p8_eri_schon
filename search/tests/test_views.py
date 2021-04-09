@@ -1,9 +1,10 @@
 from django.test import TestCase, Client, RequestFactory
-from django.urls import reverse, resolve
+from django.urls import reverse
 from django.contrib.auth.models import User
 
 from database.models import Product, Nutriscore
 from search.views import saving, search_results
+
 
 class SearchTestViews(TestCase):
 
@@ -13,13 +14,13 @@ class SearchTestViews(TestCase):
 
         nutriscore = Nutriscore.objects.create(nut_id=1, nut_type="C")
         self.product = Product.objects.create(
-            prod_id = 3017620422003,
-            prod_name = "test product",
-            nut_id = nutriscore,
+            prod_id=3017620422003,
+            prod_name="test product",
+            nut_id=nutriscore,
         )
         self.user = User.objects.create_user(
-            username = "my username",
-            password = "my pasword"
+            username="my username",
+            password="my pasword"
         )
 
         self.search_result_url = reverse('search_results')
