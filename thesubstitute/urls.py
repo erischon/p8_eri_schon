@@ -1,6 +1,6 @@
 from django.contrib import admin
-from django.urls import path, include, re_path
-from webapp import views
+from django.urls import path, include
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -10,5 +10,6 @@ urlpatterns = [
     path('search/', include('search.urls')),
 ]
 
-handler404 = 'webapp.views.error_404'
 handler400 = 'webapp.views.error_404'
+handler403 = 'webapp.views.error_404'
+handler404 = 'webapp.views.error_404'
