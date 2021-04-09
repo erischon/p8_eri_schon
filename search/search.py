@@ -51,7 +51,7 @@ class Search:
 
         for product in queryset:
             prod_id = product[0]
-            prod_name = product[1]
+            prod_name = product[1].capitalize()
             prod_url = product[2]
             prod_image = product[3]
             nutriscore = Nutriscore.objects.get(nut_id=product[4]).nut_type
