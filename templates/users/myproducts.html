@@ -24,7 +24,10 @@
                     <a href="{% url 'prodinfos' product.prod_id %}">{{ product.prod_name }}</a>
                     </h4>
                     {% if user.is_authenticated %}
-                    <p><a href="{% url 'myproducts_delete' product=product.prod_id %}" class="text-small">Effacer</a></p>
+                        <form action="{% url 'myproducts_delete' product.prod_id %}" method="post">
+                            {% csrf_token %}
+                            <input type="submit" value="Effacer" class="btn btn-warning btn-sm">
+                        </form>
                     {% endif %}
                 </div>
                 <div class="card-badge">{{ product.nut_id.nut_type }}</div>
