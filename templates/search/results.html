@@ -46,7 +46,13 @@
                                 <a href="{% url 'prodinfos' result.prod_id %}">{{ result.prod_name }}</a>
                                 </h4>
                                 {% if user.is_authenticated %}
-                                    <p><i class="fas fa-save mr-2" style="color: #8c6610;"></i><a href="{% url 'saving' product=result.prod_id %}">Sauvegarder</a></p>
+
+                                    <form action="{% url 'saving' result.prod_id %}" method="post">
+                                        {% csrf_token %}
+                                        <i class="fas fa-save" style="color: #8c6610;"></i>
+                                        <input type="submit" value="Sauvegarder" class="btn btn-link btn-sm">
+                                    </form>
+        
                                 {% endif %}
                             </div>
                             <div class="card-badge">{{ result.nutriscore }}</div>
