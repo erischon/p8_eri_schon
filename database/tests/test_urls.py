@@ -3,6 +3,7 @@ from django.urls import reverse, resolve
 
 from database.views import etl, etl_extract, etl_transform, etl_load, etl_manage_nutriscore, etl_manage_delete
 
+
 class DatabaseTestUrls(SimpleTestCase):
 
     def test_etl_url_is_resolved(self):

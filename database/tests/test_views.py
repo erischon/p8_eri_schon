@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 
 from database.models import Nutriscore
 
+
 class DatabaseTestViews(TestCase):
 
     def setUp(self):
@@ -31,8 +32,8 @@ class DatabaseTestViews(TestCase):
         self.etl_transform_url = reverse('etl_transform')
         self.etl_load_url = reverse('etl_load')
 
+    # === Test Method etl ===
 
-    ### Test Method etl ###
     def test_etl_view_user_not_logged(self):
         response = self.client.get(self.etl_url)
 
@@ -55,7 +56,6 @@ class DatabaseTestViews(TestCase):
         self.assertEquals(response.status_code, 200)
         self.assertTemplateUsed(response, 'database/etl.html')
 
-
     # def test_etl_extract_view(self):
         # self.client.login(**self.credentials_admin)
 
@@ -64,7 +64,6 @@ class DatabaseTestViews(TestCase):
         # self.assertEquals(response.status_code, 200)
         # self.assertTemplateUsed(response, 'database/etl.html')
 
-
     def test_etl_transform_view(self):
         self.client.login(**self.credentials_admin)
 
@@ -72,7 +71,6 @@ class DatabaseTestViews(TestCase):
 
         self.assertEquals(response.status_code, 200)
         self.assertTemplateUsed(response, 'database/etl.html')
-
 
     # def test_etl_extract_load_view(self):
         # self.client.login(**self.credentials_admin)

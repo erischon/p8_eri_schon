@@ -6,6 +6,7 @@ from django.urls import reverse
 from database.extract import Extract
 # from database.tests.off_data_test import off_result
 
+
 class DatabaseTestClass(TestCase):
 
     def setUp(self):
@@ -18,6 +19,5 @@ class DatabaseTestClass(TestCase):
 
         response = self.extract.extract()
 
-        self.assertEqual(response, 'ECHEC : les produits ne sont pas téléchargés.')
-
-    
+        self.assertEqual(
+            response, 'ECHEC : les produits ne sont pas téléchargés.')
