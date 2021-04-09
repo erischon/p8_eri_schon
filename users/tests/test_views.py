@@ -27,6 +27,7 @@ class UsersTestViews(TestCase):
         self.product.myproduct.add(self.user)
 
         self.signupuser_url = reverse('signupuser')
+        self.logoutuser_url = reverse('logoutuser')
         self.moncompte_url = reverse('moncompte')
         self.myproducts_url = reverse('myproducts')
         self.myproducts_delete_url = reverse('myproducts_delete', args=[self.product.prod_id])
@@ -78,9 +79,10 @@ class UsersTestViews(TestCase):
 
 
     def test_logoutuser_view(self):
-        response = self.client.post('/users/logout/')
+        self.client.login(**self.credentials)
+        response = self.client.post(self.logoutuser_url)
 
-        self.assertEquals(response.status_code, 302)
+        self.assertRedirects(response, reverse('home'))
 
 
     def test_moncompte_view(self):
