@@ -1,0 +1,509 @@
+1614939529068	geckodriver	INFO	Listening on 127.0.0.1:49529
+1614939532136	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\erisc\\AppData\\Local\\Temp\\rust_mozprofilegFTTWY"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1614939534182	Marionette	INFO	Listening on port 49538
+1614939534203	Marionette	WARN	TLS certificate errors will be ignored for this session
+1614939534216	Marionette	ERROR	[15] No reply from Marionette:Register
+JavaScript error: https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js, line 1: TypeError: $.easing is undefined
+1614939535337	Marionette	INFO	Stopped listening on port 49538
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1614939820819	geckodriver	INFO	Listening on 127.0.0.1:49766
+1614939823883	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\erisc\\AppData\\Local\\Temp\\rust_mozprofile03C8Ow"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1614939825819	Marionette	INFO	Listening on port 49776
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1614939825961	Marionette	WARN	TLS certificate errors will be ignored for this session
+1614939825970	Marionette	ERROR	[18] No reply from Marionette:Register
+1614939826074	Marionette	INFO	Stopped listening on port 49776
+JavaScript error: resource://activity-stream/lib/ASRouter.jsm, line 987: NS_ERROR_ILLEGAL_VALUE: Component returned failure code: 0x80070057 (NS_ERROR_ILLEGAL_VALUE) [nsIObserverService.removeObserver]
+console.warn: services.settings: main/cfr sync interrupted by shutdown
+console.warn: services.settings: main/partitioning-exempt-urls sync interrupted by shutdown
+1614940029330	geckodriver	INFO	Listening on 127.0.0.1:49935
+1614940032400	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\erisc\\AppData\\Local\\Temp\\rust_mozprofileeEJuzM"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1614940034340	Marionette	INFO	Listening on port 49944
+1614940034471	Marionette	WARN	TLS certificate errors will be ignored for this session
+1614940034481	Marionette	ERROR	[15] No reply from Marionette:Register
+JavaScript error: https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js, line 1: TypeError: $.easing is undefined
+1614940035653	Marionette	INFO	Stopped listening on port 49944
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1614940044237	geckodriver	INFO	Listening on 127.0.0.1:50008
+1614940047317	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\erisc\\AppData\\Local\\Temp\\rust_mozprofile8RdMjM"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1614940049180	Marionette	INFO	Listening on port 50018
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1614940049384	Marionette	WARN	TLS certificate errors will be ignored for this session
+1614940049394	Marionette	ERROR	[15] No reply from Marionette:Register
+1614940049480	Marionette	INFO	Stopped listening on port 50018
+JavaScript error: resource://activity-stream/lib/ASRouter.jsm, line 987: NS_ERROR_ILLEGAL_VALUE: Component returned failure code: 0x80070057 (NS_ERROR_ILLEGAL_VALUE) [nsIObserverService.removeObserver]
+console.warn: services.settings: main/cfr sync interrupted by shutdown
+console.warn: services.settings: main/partitioning-exempt-urls sync interrupted by shutdown
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1614940101434	geckodriver	INFO	Listening on 127.0.0.1:50075
+1614940104470	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\erisc\\AppData\\Local\\Temp\\rust_mozprofileptr93y"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1614940106369	Marionette	INFO	Listening on port 50085
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1614940106527	Marionette	WARN	TLS certificate errors will be ignored for this session
+1614940106539	Marionette	ERROR	[15] No reply from Marionette:Register
+1614940106629	Marionette	INFO	Stopped listening on port 50085
+JavaScript error: resource://activity-stream/lib/ASRouter.jsm, line 987: NS_ERROR_ILLEGAL_VALUE: Component returned failure code: 0x80070057 (NS_ERROR_ILLEGAL_VALUE) [nsIObserverService.removeObserver]
+console.warn: services.settings: main/partitioning-exempt-urls sync interrupted by shutdown
+console.error: services.settings: 
+  main/cfr-fxa Signature failed  TypeError: NetworkError when attempting to fetch resource.
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1614940157440	geckodriver	INFO	Listening on 127.0.0.1:50154
+1614940160517	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\erisc\\AppData\\Local\\Temp\\rust_mozprofileOx5fFB"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1614940162216	Marionette	INFO	Listening on port 50163
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1614940162591	Marionette	WARN	TLS certificate errors will be ignored for this session
+1614940162603	Marionette	ERROR	[15] No reply from Marionette:Register
+1614940162705	Marionette	INFO	Stopped listening on port 50163
+JavaScript error: resource://activity-stream/lib/ASRouter.jsm, line 987: NS_ERROR_ILLEGAL_VALUE: Component returned failure code: 0x80070057 (NS_ERROR_ILLEGAL_VALUE) [nsIObserverService.removeObserver]
+console.warn: services.settings: main/whats-new-panel sync interrupted by shutdown
+console.warn: services.settings: main/partitioning-exempt-urls sync interrupted by shutdown
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1616400133100	geckodriver	INFO	Listening on 127.0.0.1:62564
+1616400136180	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\erisc\\AppData\\Local\\Temp\\rust_mozprofileI1Eydw"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1616400138752	Marionette	INFO	Listening on port 62572
+1616400138897	Marionette	WARN	TLS certificate errors will be ignored for this session
+1616400138909	Marionette	ERROR	[15] No reply from Marionette:Register
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+JavaScript error: https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js, line 1: TypeError: $.easing is undefined
+1616400139929	Marionette	INFO	Stopped listening on port 62572
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1616400182502	geckodriver	INFO	Listening on 127.0.0.1:62639
+1616400185618	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\erisc\\AppData\\Local\\Temp\\rust_mozprofileqLjkzv"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1616400187305	Marionette	INFO	Listening on port 62647
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1616400187657	Marionette	WARN	TLS certificate errors will be ignored for this session
+1616400187668	Marionette	ERROR	[15] No reply from Marionette:Register
+JavaScript error: https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js, line 1: TypeError: $.easing is undefined
+1616400188491	Marionette	INFO	Stopped listening on port 62647
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1617783453606	geckodriver	INFO	Listening on 127.0.0.1:55503
+1617783456691	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\erisc\\AppData\\Local\\Temp\\rust_mozprofilexezHGr"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1617783459272	Marionette	INFO	Listening on port 55511
+1617783459390	Marionette	WARN	TLS certificate errors will be ignored for this session
+1617783459400	Marionette	ERROR	[18] No reply from Marionette:Register
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+JavaScript error: https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js, line 1: TypeError: $.easing is undefined
+1617783460371	Marionette	INFO	Stopped listening on port 55511
+JavaScript error: resource://activity-stream/lib/ASRouter.jsm, line 987: NS_ERROR_ILLEGAL_VALUE: Component returned failure code: 0x80070057 (NS_ERROR_ILLEGAL_VALUE) [nsIObserverService.removeObserver]
+[Parent 12032, IPC I/O Parent] WARNING: file /builds/worker/checkouts/gecko/ipc/chromium/src/base/process_util_win.cc:167
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1617783511051	geckodriver	INFO	Listening on 127.0.0.1:55576
+1617783514103	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\erisc\\AppData\\Local\\Temp\\rust_mozprofile062SVN"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1617783516007	Marionette	INFO	Listening on port 55586
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1617783516142	Marionette	WARN	TLS certificate errors will be ignored for this session
+1617783516153	Marionette	ERROR	[18] No reply from Marionette:Register
+JavaScript error: https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js, line 1: TypeError: $.easing is undefined
+1617783516927	Marionette	INFO	Stopped listening on port 55586
+JavaScript error: resource://activity-stream/lib/ASRouter.jsm, line 987: NS_ERROR_ILLEGAL_VALUE: Component returned failure code: 0x80070057 (NS_ERROR_ILLEGAL_VALUE) [nsIObserverService.removeObserver]
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1617783517488	geckodriver	INFO	Listening on 127.0.0.1:55631
+1617783520546	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\erisc\\AppData\\Local\\Temp\\rust_mozprofilexVsVZn"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1617783522473	Marionette	INFO	Listening on port 55639
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1617783522608	Marionette	WARN	TLS certificate errors will be ignored for this session
+1617783522617	Marionette	ERROR	[15] No reply from Marionette:Register
+1617783522620	Marionette	INFO	Stopped listening on port 55639
+JavaScript error: resource://activity-stream/lib/ASRouter.jsm, line 987: NS_ERROR_ILLEGAL_VALUE: Component returned failure code: 0x80070057 (NS_ERROR_ILLEGAL_VALUE) [nsIObserverService.removeObserver]
+console.warn: services.settings: main/cfr sync interrupted by shutdown
+[Parent 13888, IPC I/O Parent] WARNING: file /builds/worker/checkouts/gecko/ipc/chromium/src/base/process_util_win.cc:167
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1617783523145	geckodriver	INFO	Listening on 127.0.0.1:55663
+1617783526243	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\erisc\\AppData\\Local\\Temp\\rust_mozprofileXmJkpP"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1617783528073	Marionette	INFO	Listening on port 55671
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1617783528318	Marionette	WARN	TLS certificate errors will be ignored for this session
+1617783528329	Marionette	ERROR	[15] No reply from Marionette:Register
+1617783528334	Marionette	INFO	Stopped listening on port 55671
+JavaScript error: resource://activity-stream/lib/ASRouter.jsm, line 987: NS_ERROR_ILLEGAL_VALUE: Component returned failure code: 0x80070057 (NS_ERROR_ILLEGAL_VALUE) [nsIObserverService.removeObserver]
+console.error: services.settings: 
+  main/cfr Signature failed  TypeError: NetworkError when attempting to fetch resource.
+[Parent 20744, IPC I/O Parent] WARNING: file /builds/worker/checkouts/gecko/ipc/chromium/src/base/process_util_win.cc:167
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1617783528962	geckodriver	INFO	Listening on 127.0.0.1:55696
+1617783532056	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\erisc\\AppData\\Local\\Temp\\rust_mozprofileGJIQmW"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1617783533936	Marionette	INFO	Listening on port 55704
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1617783534120	Marionette	WARN	TLS certificate errors will be ignored for this session
+1617783534132	Marionette	ERROR	[15] No reply from Marionette:Register
+JavaScript error: https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js, line 1: TypeError: $.easing is undefined
+1617783535030	Marionette	INFO	Stopped listening on port 55704
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1617783752563	geckodriver	INFO	Listening on 127.0.0.1:55805
+1617783755651	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\erisc\\AppData\\Local\\Temp\\rust_mozprofile05A48W"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1617783757595	Marionette	INFO	Listening on port 55814
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1617783757733	Marionette	WARN	TLS certificate errors will be ignored for this session
+1617783757742	Marionette	ERROR	[15] No reply from Marionette:Register
+JavaScript error: https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js, line 1: TypeError: $.easing is undefined
+1617783758613	Marionette	INFO	Stopped listening on port 55814
+JavaScript error: resource://activity-stream/lib/ASRouter.jsm, line 987: NS_ERROR_ILLEGAL_VALUE: Component returned failure code: 0x80070057 (NS_ERROR_ILLEGAL_VALUE) [nsIObserverService.removeObserver]
+console.error: services.settings: 
+  main/whats-new-panel Signature failed  TypeError: NetworkError when attempting to fetch resource.
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1617783759287	geckodriver	INFO	Listening on 127.0.0.1:55868
+1617783762315	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\erisc\\AppData\\Local\\Temp\\rust_mozprofileG6HXfj"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1617783764213	Marionette	INFO	Listening on port 55877
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1617783764372	Marionette	WARN	TLS certificate errors will be ignored for this session
+1617783764382	Marionette	ERROR	[15] No reply from Marionette:Register
+JavaScript error: https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js, line 1: TypeError: $.easing is undefined
+1617783765216	Marionette	INFO	Stopped listening on port 55877
+JavaScript error: resource://activity-stream/lib/ASRouter.jsm, line 987: NS_ERROR_ILLEGAL_VALUE: Component returned failure code: 0x80070057 (NS_ERROR_ILLEGAL_VALUE) [nsIObserverService.removeObserver]
+console.warn: services.settings: main/whats-new-panel sync interrupted by shutdown
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1617783765855	geckodriver	INFO	Listening on 127.0.0.1:55927
+1617783768936	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\erisc\\AppData\\Local\\Temp\\rust_mozprofileUpAMVF"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1617783770815	Marionette	INFO	Listening on port 55936
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1617783771003	Marionette	WARN	TLS certificate errors will be ignored for this session
+1617783771013	Marionette	ERROR	[15] No reply from Marionette:Register
+1617783771020	Marionette	INFO	Stopped listening on port 55936
+JavaScript error: resource://activity-stream/lib/ASRouter.jsm, line 987: NS_ERROR_ILLEGAL_VALUE: Component returned failure code: 0x80070057 (NS_ERROR_ILLEGAL_VALUE) [nsIObserverService.removeObserver]
+console.error: services.settings: 
+  main/cfr Signature failed  TypeError: NetworkError when attempting to fetch resource.
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1617783771576	geckodriver	INFO	Listening on 127.0.0.1:55961
+1617783774653	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\erisc\\AppData\\Local\\Temp\\rust_mozprofilekBHQo7"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1617783776627	Marionette	INFO	Listening on port 55969
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1617783776720	Marionette	WARN	TLS certificate errors will be ignored for this session
+1617783776729	Marionette	ERROR	[18] No reply from Marionette:Register
+1617783776733	Marionette	INFO	Stopped listening on port 55969
+JavaScript error: resource://activity-stream/lib/ASRouter.jsm, line 987: NS_ERROR_ILLEGAL_VALUE: Component returned failure code: 0x80070057 (NS_ERROR_ILLEGAL_VALUE) [nsIObserverService.removeObserver]
+console.warn: services.settings: main/cfr-fxa sync interrupted by shutdown
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1617783777389	geckodriver	INFO	Listening on 127.0.0.1:55994
+1617783780481	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\erisc\\AppData\\Local\\Temp\\rust_mozprofileexG9FM"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1617783782493	Marionette	INFO	Listening on port 56003
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1617783782550	Marionette	WARN	TLS certificate errors will be ignored for this session
+1617783782561	Marionette	ERROR	[15] No reply from Marionette:Register
+JavaScript error: https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js, line 1: TypeError: $.easing is undefined
+1617783783766	Marionette	INFO	Stopped listening on port 56003
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1617783853615	geckodriver	INFO	Listening on 127.0.0.1:56072
+1617783856673	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\erisc\\AppData\\Local\\Temp\\rust_mozprofile8Y2a8a"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1617783858532	Marionette	INFO	Listening on port 56080
+1617783858727	Marionette	WARN	TLS certificate errors will be ignored for this session
+1617783858737	Marionette	ERROR	[18] No reply from Marionette:Register
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+JavaScript error: https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js, line 1: TypeError: $.easing is undefined
+1617783859701	Marionette	INFO	Stopped listening on port 56080
+JavaScript error: resource://activity-stream/lib/ASRouter.jsm, line 987: NS_ERROR_ILLEGAL_VALUE: Component returned failure code: 0x80070057 (NS_ERROR_ILLEGAL_VALUE) [nsIObserverService.removeObserver]
+[Parent 12000, IPC I/O Parent] WARNING: file /builds/worker/checkouts/gecko/ipc/chromium/src/base/process_util_win.cc:167
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1617783860250	geckodriver	INFO	Listening on 127.0.0.1:56132
+1617783863319	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\erisc\\AppData\\Local\\Temp\\rust_mozprofileg5wWAV"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1617783865289	Marionette	INFO	Listening on port 56140
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1617783865393	Marionette	WARN	TLS certificate errors will be ignored for this session
+1617783865404	Marionette	ERROR	[15] No reply from Marionette:Register
+JavaScript error: https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js, line 1: TypeError: $.easing is undefined
+1617783866261	Marionette	INFO	Stopped listening on port 56140
+JavaScript error: resource://activity-stream/lib/ASRouter.jsm, line 987: NS_ERROR_ILLEGAL_VALUE: Component returned failure code: 0x80070057 (NS_ERROR_ILLEGAL_VALUE) [nsIObserverService.removeObserver]
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1617783866917	geckodriver	INFO	Listening on 127.0.0.1:56192
+1617783869986	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\erisc\\AppData\\Local\\Temp\\rust_mozprofileaefwhS"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1617783872008	Marionette	INFO	Listening on port 56200
+1617783872062	Marionette	WARN	TLS certificate errors will be ignored for this session
+1617783872071	Marionette	ERROR	[15] No reply from Marionette:Register
+1617783872077	Marionette	INFO	Stopped listening on port 56200
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+JavaScript error: resource://activity-stream/lib/ASRouter.jsm, line 987: NS_ERROR_ILLEGAL_VALUE: Component returned failure code: 0x80070057 (NS_ERROR_ILLEGAL_VALUE) [nsIObserverService.removeObserver]
+console.error: services.settings: 
+  main/message-groups Signature failed  TypeError: NetworkError when attempting to fetch resource.
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1617783872646	geckodriver	INFO	Listening on 127.0.0.1:56222
+1617783875731	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\erisc\\AppData\\Local\\Temp\\rust_mozprofilecxaG4G"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1617783877732	Marionette	INFO	Listening on port 56231
+1617783877783	Marionette	WARN	TLS certificate errors will be ignored for this session
+1617783877792	Marionette	ERROR	[15] No reply from Marionette:Register
+1617783877797	Marionette	INFO	Stopped listening on port 56231
+JavaScript error: resource://activity-stream/lib/ASRouter.jsm, line 987: NS_ERROR_ILLEGAL_VALUE: Component returned failure code: 0x80070057 (NS_ERROR_ILLEGAL_VALUE) [nsIObserverService.removeObserver]
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1617783878423	geckodriver	INFO	Listening on 127.0.0.1:56253
+1617783881484	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\erisc\\AppData\\Local\\Temp\\rust_mozprofileXsOLQX"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1617783883548	Marionette	INFO	Listening on port 56261
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1617783883656	Marionette	WARN	TLS certificate errors will be ignored for this session
+1617783883666	Marionette	ERROR	[15] No reply from Marionette:Register
+JavaScript error: https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js, line 1: TypeError: $.easing is undefined
+1617783884536	Marionette	INFO	Stopped listening on port 56261
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1617783939857	geckodriver	INFO	Listening on 127.0.0.1:56322
+1617783942935	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\erisc\\AppData\\Local\\Temp\\rust_mozprofileiNnRuI"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1617783944777	Marionette	INFO	Listening on port 56331
+1617783945023	Marionette	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1617783945036	Marionette	ERROR	[15] No reply from Marionette:Register
+JavaScript error: https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js, line 1: TypeError: $.easing is undefined
+1617783945912	Marionette	INFO	Stopped listening on port 56331
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1617783946588	geckodriver	INFO	Listening on 127.0.0.1:56388
+1617783949662	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\erisc\\AppData\\Local\\Temp\\rust_mozprofileivPXAn"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1617783951609	Marionette	INFO	Listening on port 56398
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1617783951732	Marionette	WARN	TLS certificate errors will be ignored for this session
+1617783951743	Marionette	ERROR	[18] No reply from Marionette:Register
+JavaScript error: https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js, line 1: TypeError: $.easing is undefined
+1617783952778	Marionette	INFO	Stopped listening on port 56398
+1617783953454	geckodriver	INFO	Listening on 127.0.0.1:56452
+1617783956549	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\erisc\\AppData\\Local\\Temp\\rust_mozprofiled7tfmA"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1617783958423	Marionette	INFO	Listening on port 56460
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1617783958609	Marionette	WARN	TLS certificate errors will be ignored for this session
+1617783958620	Marionette	ERROR	[18] No reply from Marionette:Register
+1617783958623	Marionette	INFO	Stopped listening on port 56460
+JavaScript error: resource://activity-stream/lib/ASRouter.jsm, line 987: NS_ERROR_ILLEGAL_VALUE: Component returned failure code: 0x80070057 (NS_ERROR_ILLEGAL_VALUE) [nsIObserverService.removeObserver]
+console.error: services.settings: 
+  main/cfr-fxa Signature failed  TypeError: NetworkError when attempting to fetch resource.
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1617783959132	geckodriver	INFO	Listening on 127.0.0.1:56484
+1617783962214	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\erisc\\AppData\\Local\\Temp\\rust_mozprofileLL4r0x"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1617783964126	Marionette	INFO	Listening on port 56493
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1617783964291	Marionette	WARN	TLS certificate errors will be ignored for this session
+1617783964301	Marionette	ERROR	[15] No reply from Marionette:Register
+1617783964305	Marionette	INFO	Stopped listening on port 56493
+JavaScript error: resource://activity-stream/lib/ASRouter.jsm, line 987: NS_ERROR_ILLEGAL_VALUE: Component returned failure code: 0x80070057 (NS_ERROR_ILLEGAL_VALUE) [nsIObserverService.removeObserver]
+console.warn: services.settings: main/cfr-fxa sync interrupted by shutdown
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1617783964943	geckodriver	INFO	Listening on 127.0.0.1:56517
+1617783968025	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\erisc\\AppData\\Local\\Temp\\rust_mozprofileWGP0Ya"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1617783969921	Marionette	INFO	Listening on port 56525
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1617783970104	Marionette	WARN	TLS certificate errors will be ignored for this session
+1617783970114	Marionette	ERROR	[15] No reply from Marionette:Register
+JavaScript error: https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js, line 1: TypeError: $.easing is undefined
+1617783971110	Marionette	INFO	Stopped listening on port 56525
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1617784053946	geckodriver	INFO	Listening on 127.0.0.1:56591
+1617784057035	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\erisc\\AppData\\Local\\Temp\\rust_mozprofileC0vbcd"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1617784058928	Marionette	INFO	Listening on port 56599
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1617784059109	Marionette	WARN	TLS certificate errors will be ignored for this session
+1617784059119	Marionette	ERROR	[15] No reply from Marionette:Register
+JavaScript error: https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js, line 1: TypeError: $.easing is undefined
+1617784060130	Marionette	INFO	Stopped listening on port 56599
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1617784106834	geckodriver	INFO	Listening on 127.0.0.1:56660
+1617784109895	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\erisc\\AppData\\Local\\Temp\\rust_mozprofilePh3dgX"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1617784111724	Marionette	INFO	Listening on port 56668
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1617784111958	Marionette	WARN	TLS certificate errors will be ignored for this session
+1617784111968	Marionette	ERROR	[15] No reply from Marionette:Register
+JavaScript error: https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js, line 1: TypeError: $.easing is undefined
+1617784112911	Marionette	INFO	Stopped listening on port 56668
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1617784266814	geckodriver	INFO	Listening on 127.0.0.1:56754
+1617784269889	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\erisc\\AppData\\Local\\Temp\\rust_mozprofileQagNTk"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1617784271873	Marionette	INFO	Listening on port 56762
+1617784271965	Marionette	WARN	TLS certificate errors will be ignored for this session
+1617784271974	Marionette	ERROR	[15] No reply from Marionette:Register
+JavaScript error: https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js, line 1: TypeError: $.easing is undefined
+1617784273033	Marionette	INFO	Stopped listening on port 56762
+1617784302536	geckodriver	INFO	Listening on 127.0.0.1:56820
+1617784305634	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\erisc\\AppData\\Local\\Temp\\rust_mozprofileXXlTc4"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1617784307584	Marionette	INFO	Listening on port 56828
+1617784307737	Marionette	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1617784307750	Marionette	ERROR	[15] No reply from Marionette:Register
+JavaScript error: https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js, line 1: TypeError: $.easing is undefined
+1617784308720	Marionette	INFO	Stopped listening on port 56828
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1617784680012	geckodriver	INFO	Listening on 127.0.0.1:56941
+1617784683110	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\erisc\\AppData\\Local\\Temp\\rust_mozprofileLuJ6Pg"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1617784685031	Marionette	INFO	Listening on port 56950
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1617784685191	Marionette	WARN	TLS certificate errors will be ignored for this session
+1617784685202	Marionette	ERROR	[15] No reply from Marionette:Register
+JavaScript error: https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js, line 1: TypeError: $.easing is undefined
+1617784686142	Marionette	INFO	Stopped listening on port 56950
+1617784723304	geckodriver	INFO	Listening on 127.0.0.1:57009
+1617784726402	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\erisc\\AppData\\Local\\Temp\\rust_mozprofileelVyzL"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1617784728309	Marionette	INFO	Listening on port 57017
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1617784728464	Marionette	WARN	TLS certificate errors will be ignored for this session
+1617784728474	Marionette	ERROR	[15] No reply from Marionette:Register
+JavaScript error: https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js, line 1: TypeError: $.easing is undefined
+1617784729421	Marionette	INFO	Stopped listening on port 57017
+JavaScript error: resource://activity-stream/lib/ASRouter.jsm, line 987: NS_ERROR_ILLEGAL_VALUE: Component returned failure code: 0x80070057 (NS_ERROR_ILLEGAL_VALUE) [nsIObserverService.removeObserver]
+[Parent 6004, IPC I/O Parent] WARNING: file /builds/worker/checkouts/gecko/ipc/chromium/src/base/process_util_win.cc:167
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1617784793221	geckodriver	INFO	Listening on 127.0.0.1:57081
+1617784796303	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\erisc\\AppData\\Local\\Temp\\rust_mozprofile07RM8k"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1617784798137	Marionette	INFO	Listening on port 57089
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1617784798365	Marionette	WARN	TLS certificate errors will be ignored for this session
+1617784798375	Marionette	ERROR	[15] No reply from Marionette:Register
+JavaScript error: https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js, line 1: TypeError: $.easing is undefined
+1617784799310	Marionette	INFO	Stopped listening on port 57089
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1617784859128	geckodriver	INFO	Listening on 127.0.0.1:57156
+1617784862191	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\erisc\\AppData\\Local\\Temp\\rust_mozprofiletI7omT"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1617784864197	Marionette	INFO	Listening on port 57164
+1617784864286	Marionette	WARN	TLS certificate errors will be ignored for this session
+1617784864296	Marionette	ERROR	[15] No reply from Marionette:Register
+JavaScript error: https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js, line 1: TypeError: $.easing is undefined
+1617784865239	Marionette	INFO	Stopped listening on port 57164
+JavaScript error: resource://activity-stream/lib/ASRouter.jsm, line 987: NS_ERROR_ILLEGAL_VALUE: Component returned failure code: 0x80070057 (NS_ERROR_ILLEGAL_VALUE) [nsIObserverService.removeObserver]
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1617784930231	geckodriver	INFO	Listening on 127.0.0.1:57232
+1617784933333	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\erisc\\AppData\\Local\\Temp\\rust_mozprofilewg6cyP"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1617784935354	Marionette	INFO	Listening on port 57240
+1617784935382	Marionette	WARN	TLS certificate errors will be ignored for this session
+1617784935396	Marionette	ERROR	[18] No reply from Marionette:Register
+[Parent 12156, IPC I/O Parent] WARNING: file /builds/worker/checkouts/gecko/ipc/chromium/src/base/process_util_win.cc:167
+JavaScript error: https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js, line 1: TypeError: $.easing is undefined
+1617784936351	Marionette	INFO	Stopped listening on port 57240
+JavaScript error: resource://activity-stream/lib/ASRouter.jsm, line 987: NS_ERROR_ILLEGAL_VALUE: Component returned failure code: 0x80070057 (NS_ERROR_ILLEGAL_VALUE) [nsIObserverService.removeObserver]
+console.warn: services.settings: main/whats-new-panel sync interrupted by shutdown
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1617784954619	geckodriver	INFO	Listening on 127.0.0.1:57297
+1617784957711	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\erisc\\AppData\\Local\\Temp\\rust_mozprofiledvmh0Q"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1617784959596	Marionette	INFO	Listening on port 57305
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1617784959794	Marionette	WARN	TLS certificate errors will be ignored for this session
+1617784959803	Marionette	ERROR	[15] No reply from Marionette:Register
+JavaScript error: https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js, line 1: TypeError: $.easing is undefined
+1617784960762	Marionette	INFO	Stopped listening on port 57305
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1617785320652	geckodriver	INFO	Listening on 127.0.0.1:57407
+1617785323732	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\erisc\\AppData\\Local\\Temp\\rust_mozprofileUOx4Na"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1617785325658	Marionette	INFO	Listening on port 57416
+1617785325802	Marionette	WARN	TLS certificate errors will be ignored for this session
+1617785325813	Marionette	ERROR	[15] No reply from Marionette:Register
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+JavaScript error: https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js, line 1: TypeError: $.easing is undefined
+1617785326772	Marionette	INFO	Stopped listening on port 57416
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1617885085477	geckodriver	INFO	Listening on 127.0.0.1:55431
+1617885088531	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\erisc\\AppData\\Local\\Temp\\rust_mozprofilelPenrn"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1617885091586	Marionette	INFO	Listening on port 55439
+1617885091735	Marionette	WARN	TLS certificate errors will be ignored for this session
+1617885091750	Marionette	ERROR	[15] No reply from Marionette:Register
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+JavaScript error: https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js, line 1: TypeError: $.easing is undefined
+1617885093560	Marionette	INFO	Stopped listening on port 55439
+JavaScript error: resource://activity-stream/lib/ASRouter.jsm, line 987: NS_ERROR_ILLEGAL_VALUE: Component returned failure code: 0x80070057 (NS_ERROR_ILLEGAL_VALUE) [nsIObserverService.removeObserver]
+[Parent 10800, IPC I/O Parent] WARNING: file /builds/worker/checkouts/gecko/ipc/chromium/src/base/process_util_win.cc:167
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+

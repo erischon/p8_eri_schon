@@ -1,11 +1,6 @@
-venv/
-.env
-db.sqlite3
-geckodriver.log
-__pycache__/
+__pycache__
 *.pyc
-migrations/
-*.json
-.coverage
-.coveragerc
+venv/
+db.sqlite3
+
 htmlcov/
