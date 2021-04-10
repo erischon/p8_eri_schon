@@ -1,4 +1,6 @@
 from unittest.mock import patch
+from nose.tools import assert_true
+import requests
 
 from django.test import TestCase, Client
 from django.urls import reverse
@@ -9,15 +11,19 @@ from database.extract import Extract
 
 class DatabaseTestClass(TestCase):
 
-    def setUp(self):
-        self.extract = Extract()
+    # def setUp(self):
+    #     self.extract = Extract()
 
-    @patch('database.extract.requests')
-    def test_extract(self, mock_requests):
-        mock_requests.json = 1
-        mock_requests.get = 1
+    def test_request_response(self):
+        response = requests.get('https://fr.openfoodfacts.org/cgi/search.pl')
+        assert_true(response.ok)
 
-        response = self.extract.extract()
+    # @patch('database.extract.requests')
+    # def test_extract(self, mock_requests):
+    #     mock_requests.json = {'toto':'toto'}
+    #     mock_requests.get = True
 
-        self.assertEqual(
-            response, 'ECHEC : les produits ne sont pas téléchargés.')
+    #     response = self.extract.extract()
+    #     print(response)
+    #     self.assertEqual(
+    #         response, 'ECHEC : les produits ne sont pas téléchargés.')
