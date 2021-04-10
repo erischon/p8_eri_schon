@@ -35,7 +35,6 @@ class Search:
         nutriscore = product.nut_id.nut_id
         categorie = Prodcat.objects.filter(prod_id=product.prod_id)[0]
 
-        # product_list = Product.objects.filter(prodcat__cat_id=categorie.cat_id).filter(nut_id__lte=(nutriscore-1)).order_by('nut_id', 'prod_name')
         product_list = Product.objects.filter(prodcat__cat_id=categorie.cat_id).filter(
             nut_id__lte=(nutriscore-1)).order_by('nut_id', 'prod_name').values_list()[:10]
 
@@ -82,7 +81,3 @@ class Search:
                         'prod_image': prod_image, 'nutriscore': nutriscore, 'categories': self.categories}
 
         return product_info
-
-
-if __name__ == "__main__":
-    search = Search()
