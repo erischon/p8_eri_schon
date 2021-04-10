@@ -1,6 +1,6 @@
 from django.core.management.base import BaseCommand
 
-from database.manage import DBManage  # Can be remove if we don't want to delete
+from database.utils import DBManage  # Can be remove if we don't want to delete
 from database.extract import Extract
 from database.transform import Transform
 from database.load import Load
