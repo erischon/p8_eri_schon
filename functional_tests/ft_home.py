@@ -12,7 +12,7 @@ class NewVisitorTest(unittest.TestCase):
     def test_hp_look_great(self):
         
         # Lily a entendu parlé d'une application web qui permet de trouver des substituts alimentaires. Elle va y jeter un oeil en utilisant son navigateur web.
-        self.browser.get('http://127.0.0.1:8000')
+        self.browser.get('http://localhost:8000')
 
         # Elle voit qu'elle est au bon endroit en voyant le titre de la page.
         self.assertIn('The Substitute', self.browser.title) 
