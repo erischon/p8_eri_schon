@@ -13,6 +13,9 @@ class AuthorModelTest(TestCase):
         )
 
     def test_first_name_label(self):
+        '''
+        I test 
+        '''
         product = Product.objects.get(prod_id=3017620422003)
 
         field_label = product._meta.get_field('prod_name').verbose_name
