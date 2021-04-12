@@ -64,13 +64,13 @@ class DatabaseTestViews(TestCase):
         # self.assertEquals(response.status_code, 200)
         # self.assertTemplateUsed(response, 'database/etl.html')
 
-    def test_etl_transform_view(self):
-        self.client.login(**self.credentials_admin)
+    # def test_etl_transform_view(self):
+    #     self.client.login(**self.credentials_admin)
 
-        response = self.client.get(self.etl_transform_url)
+    #     response = self.client.get(self.etl_transform_url)
 
-        self.assertEquals(response.status_code, 200)
-        self.assertTemplateUsed(response, 'database/etl.html')
+    #     self.assertEquals(response.status_code, 200)
+    #     self.assertTemplateUsed(response, 'database/etl.html')
 
     # def test_etl_extract_load_view(self):
         # self.client.login(**self.credentials_admin)
