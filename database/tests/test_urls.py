@@ -5,6 +5,9 @@ from database.views import etl, etl_extract, etl_transform, etl_load, etl_manage
 
 
 class DatabaseTestUrls(SimpleTestCase):
+    '''
+    I test all the urls in database app
+    '''
 
     def test_etl_url_is_resolved(self):
         url = reverse('etl')
