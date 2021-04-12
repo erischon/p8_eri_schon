@@ -12,9 +12,9 @@ class AuthorModelTest(TestCase):
             nut_id=nutriscore,
         )
 
-    def test_first_name_label(self):
+    def test_first_name_label_and_max_length(self):
         '''
-        I test 
+        I test if the nama label and the max length are correct
         '''
         product = Product.objects.get(prod_id=3017620422003)
 
