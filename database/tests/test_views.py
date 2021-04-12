@@ -6,6 +6,9 @@ from database.models import Nutriscore
 
 
 class DatabaseTestViews(TestCase):
+    '''
+    I test all the views in database app
+    '''
 
     def setUp(self):
         self.client = Client()
