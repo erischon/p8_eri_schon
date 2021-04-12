@@ -7,6 +7,9 @@ from database.load import Load
 
 
 class Command(BaseCommand):
+    '''
+    I launch the ETL
+    '''
 
     def handle(self, *args, **kwargs):
         managing = DBManage()  # Can be remove if we don't want to delete
