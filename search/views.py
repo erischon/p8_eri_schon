@@ -21,8 +21,7 @@ def search_results(request):
             result_info = search.find_substitute(search_product)
             result_infos.extend(search.result_infos(result_info))
 
-        result_infos = [i for n, i in enumerate(
-            result_infos) if i not in result_infos[n + 1:]]
+        result_infos = [i for n, i in enumerate(result_infos) if i not in result_infos[n + 1:]]
 
         return render(request, 'search/results.html', {'product': product, 'results': result_infos})
 
