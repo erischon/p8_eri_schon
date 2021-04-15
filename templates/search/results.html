@@ -12,7 +12,6 @@
     <div class="row align-items-center justify-content-center">
       <div class="col-lg-4">
         <h1 class="display-4 font-weight-bold mb-4"><a href="{% url 'prodinfos' product.prod_id %}" class="text-white">{{ product.prod_name }}</a></h1>
-        <p style="font-size: 1.4rem;">(qui a un Nutriscore de : {{ product.nutriscore }})</p>
       </div>
       <div class="col-lg-2">
         <img class="img-fuild img-product-top border border-dark rounded" src="{{ product.prod_image }}" alt="">
