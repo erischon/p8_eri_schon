@@ -8,3 +8,4 @@ geckodriver.log
 # Rapports
 htmlcov/
 .coverage
+.coveragerc
