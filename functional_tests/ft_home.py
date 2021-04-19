@@ -60,6 +60,5 @@ class NewVisitorTest(unittest.TestCase):
         self.assertIn('Contact', footer.find_element_by_id('link_contact').text)
 
 
-
 if __name__ == '__main__':
     unittest.main(warnings='ignore')
