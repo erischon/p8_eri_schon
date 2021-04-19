@@ -2,6 +2,7 @@ from django.test import TestCase
 
 from database.models import Product, Nutriscore
 
+
 class AuthorModelTest(TestCase):
 
     def setUp(self):

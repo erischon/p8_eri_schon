@@ -1,4 +1,4 @@
-from selenium import webdriver
+# from selenium import webdriver
 import unittest
 
 from ft_home import NewVisitorTest

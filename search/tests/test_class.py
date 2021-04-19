@@ -51,7 +51,6 @@ class SearchTestClass(TestCase):
 
         self.assertIsInstance(list(response), list)
 
-
     def test_result_infos(self):
         response = self.search.result_infos(self.substitute)
 

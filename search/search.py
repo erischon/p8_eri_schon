@@ -36,7 +36,7 @@ class Search:
         categorie = Prodcat.objects.filter(prod_id=product.prod_id)[0]
 
         product_list = Product.objects.filter(prodcat__cat_id=categorie.cat_id).filter(
-            nut_id__lte=(nutriscore-1)).order_by('nut_id', 'prod_name').values_list()[:10]
+            nut_id__lte=(nutriscore - 1)).order_by('nut_id', 'prod_name').values_list()[:10]
 
         return product_list
 

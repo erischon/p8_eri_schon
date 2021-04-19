@@ -26,7 +26,6 @@ class Load:
         message = "REUSSITE du chargement des produits"
         return message
 
-
     def load_one_data(self, prod_key, prod_to_load):
 
         # Insert Product
@@ -68,8 +67,7 @@ class Load:
                 brand_name=prod_to_load["brands"][n])
             brand_id = brand_object.brand_id
             if Prodbrand.objects.filter(brand_id=brand_id, prod_id=prod_key).exists() is False:
-                query = Prodbrand(brand_id=brand_object,
-                                    prod_id=prod_object)
+                query = Prodbrand(brand_id=brand_object, prod_id=prod_object)
                 query.save()
 
         # Insert Shop

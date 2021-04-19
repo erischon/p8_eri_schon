@@ -3,7 +3,7 @@ from django.urls import reverse
 from django.contrib.auth.models import User
 
 from database.models import Product, Nutriscore
-from search.views import saving, search_results
+from search.views import saving
 
 
 class SearchTestViews(TestCase):
@@ -29,12 +29,12 @@ class SearchTestViews(TestCase):
         self.saving_url = reverse('saving', args=[self.product.prod_id])
 
     def test_search_results(self):
-        response = self.client.get(self.search_result_url, {'user_request':"Test product"})
+        response = self.client.get(self.search_result_url, {'user_request': "Test product"})
 
         self.assertEquals(response.status_code, 200)
 
     def test_search_results_invalid_form(self):
-        response = self.client.get(self.search_result_url, {'user_request':""})
+        response = self.client.get(self.search_result_url, {'user_request': ""})
 
         self.assertEquals(response.status_code, 200)
         self.assertTemplateUsed(response, 'search/results.html')
