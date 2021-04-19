@@ -2,14 +2,20 @@ from django.shortcuts import render, redirect
 
 from database.models import Product
 from search.search import Search
+from search.forms import RequestForm
 
 
 def search_results(request):
     ''' I search for substitute to the product requested. '''
-    query = request.GET['q']
+    form = RequestForm(request.GET)
+
+    if form.is_valid():
+        query = form.cleaned_data['user_request']
+    else:
+        return render(request, 'search/results.html', {'product': "None"})
+
     search = Search()
     result_infos = []
-
     search_product = search.find_product(query)
 
     if not search_product:

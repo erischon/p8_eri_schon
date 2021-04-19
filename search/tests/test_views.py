@@ -29,11 +29,15 @@ class SearchTestViews(TestCase):
         self.saving_url = reverse('saving', args=[self.product.prod_id])
 
     def test_search_results(self):
-        request = self.factory.get('?q=3017620422003')
-
-        response = search_results(request)
+        response = self.client.get(self.search_result_url, {'user_request':"Test product"})
 
         self.assertEquals(response.status_code, 200)
+
+    def test_search_results_invalid_form(self):
+        response = self.client.get(self.search_result_url, {'user_request':""})
+
+        self.assertEquals(response.status_code, 200)
+        self.assertTemplateUsed(response, 'search/results.html')
 
     def test_prodinfos_view(self):
         response = self.client.get(self.prodinfos_url)
