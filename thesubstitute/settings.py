@@ -3,6 +3,8 @@ from pathlib import Path
 import environ
 import os
 # import dj_database_url
+# from django.contrib.auth.models import User
+
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -134,3 +136,6 @@ STATICFILES_DIRS = [str(BASE_DIR.joinpath('static'))]
 # STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
+
+AUTHENTICATION_BACKENDS = ['users.myauth.EmailBackend']
+
