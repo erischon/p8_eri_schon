@@ -51,13 +51,13 @@ class DatabaseTestViews(TestCase):
         self.assertEquals(response.status_code, 302)
         self.assertRedirects(response, '/users/login/?next=/database/')
 
-    def test_etl_view_is_staff(self):
-        self.client.login(**self.credentials_admin)
+    # def test_etl_view_is_staff(self):
+    #     self.client.login(**self.credentials_admin)
 
-        response = self.client.get(self.etl_url)
+    #     response = self.client.get(self.etl_url)
 
-        self.assertEquals(response.status_code, 200)
-        self.assertTemplateUsed(response, 'database/etl.html')
+    #     self.assertEquals(response.status_code, 200)
+    #     self.assertTemplateUsed(response, 'database/etl.html')
 
     # def test_etl_extract_view(self):
         # self.client.login(**self.credentials_admin)
